@@ -613,3 +613,27 @@ VALUES
     (298, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
     (299, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
     (300, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature'));
+
+
+DELIMITER $$
+
+CREATE PROCEDURE fill_Jury()
+BEGIN
+    DECLARE evaluateur_id INT;
+    DECLARE concours_id INT;
+
+    -- Boucle pour les premiers compétiteurs
+FOR evaluateur_id IN 261..300 DO
+        -- Sélectionner un concours aléatoire entre 1 et 20
+        SET concours_id = FLOOR(1 + (RAND() * 20));
+
+        -- Insertion dans la table Club_Participe
+INSERT INTO Jury (numEvaluateur, numConcours)
+VALUES (evaluateur_id, concours_id);
+END FOR;
+END$$
+
+DELIMITER ;
+
+
+CALL fill_Jury();
