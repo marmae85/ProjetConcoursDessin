@@ -493,3 +493,50 @@ INSERT INTO President (numPresident, prime)
 SELECT numUtilisateur, FLOOR(RAND() * (10000 - 500 + 1)) + 500
 FROM Utilisateur
 WHERE numUtilisateur BETWEEN 156 AND 233;
+
+-- Insérer un concours terminé avec le thème "nature morte"
+INSERT INTO Concours (numPresident, theme, dateDebut, dateFin, etat)
+VALUES
+    (156,'nature morte','2025-01-01','2025-01-15','Terminé'),
+    (157,'voiture','2024-07-01','2025-01-01','Terminé'),
+    (158,'moto','2023-01-01','2023-01-15','Terminé'),
+    (159,'paysage','2022-01-01','2022-01-15','Terminé'),
+    (161,'nature morte','2025-01-01','2025-01-15','Terminé'),
+    (162,'voiture','2024-07-01','2025-01-01','Terminé'),
+    (163,'moto','2023-01-01','2023-01-15','Terminé'),
+    (164,'paysage','2022-01-01','2022-01-15','Terminé'),
+    (165,'nature morte','2025-01-01','2025-01-09','Terminé'),
+    (166,'voiture','2024-07-01','2025-01-11','Terminé'),
+    (167,'moto','2023-01-01','2023-01-15','Terminé'),
+    (168,'paysage','2022-01-01','2022-01-15','Terminé'),
+    (169,'nature morte','2025-01-01','2025-01-05','Terminé'),
+    (170,'voiture','2024-07-01','2025-01-01','Terminé'),
+    (171,'moto','2023-01-01','2023-01-08','Terminé'),
+    (172,'paysage','2022-01-01','2022-01-07','Terminé'),
+    (173,'nature morte','2025-01-01','2025-01-11','Terminé'),
+    (174,'voiture','2024-07-01','2025-01-12','Terminé'),
+    (175,'moto','2023-01-01','2023-01-12','Terminé'),
+    (176,'paysage','2025-01-01','2025-04-15','En cours');
+
+DELIMITER $$
+
+CREATE PROCEDURE fill_club_participe()
+BEGIN
+    DECLARE club_id INT;
+    DECLARE concours_id INT;
+
+    -- Boucle pour les 40 premiers clubs
+FOR club_id IN 1..40 DO
+        -- Sélectionner un concours aléatoire entre 1 et 20
+        SET concours_id = FLOOR(1 + (RAND() * 20));
+
+        -- Insertion dans la table Club_Participe
+INSERT INTO Club_Participe (numClub, numConcours)
+VALUES (club_id, concours_id);
+END FOR;
+END$$
+
+DELIMITER ;
+
+
+CALL fill_club_participe();
