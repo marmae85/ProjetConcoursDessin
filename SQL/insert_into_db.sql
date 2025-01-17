@@ -313,3 +313,53 @@ VALUES
     (27, 'Vidal', 'Sophie', '54 avenue de la République, Toulouse', 'sophiedavid27', 'Vidal4567', 'sophie.vidal27@example.com', '1994-09-02'),
     (28, 'Pinel', 'Théo', '62 rue de la Montagne, Marseille', 'theopinel28', 'Pinel*5678', 'theo.pinel28@example.com', '1990-08-11'),
     (29, 'Charruau', 'Axelle', '88 rue des Écoles, Bordeaux', 'axellecharruau29', 'Charruau123', 'axelle.charruau29@example.com', '1989-05-27');
+
+INSERT INTO Utilisateur (numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
+VALUES
+    (10, 'Bernard', 'Martin', '12 rue de la Révolution, Lyon', 'martinbernard10', 'Bernard123', 'martin.bernard10@example.com', '1992-07-15'),
+    (11, 'Lemoine', 'Jules', '56 avenue des Champs, Paris', 'juleslemoine11', 'Lemoine!234', 'jules.lemoine11@example.com', '1990-09-12'),
+    (12, 'Hernandez', 'Anaïs', '22 rue de la Gare, Nantes', 'anaishernandez12', 'Hernandez567', 'anais.hernandez12@example.com', '1989-01-23'),
+    (13, 'Richard', 'Lucas', '32 boulevard de la Lune, Bordeaux', 'lucasrichard13', 'Richard123@', 'lucas.richard13@example.com', '1994-02-18'),
+    (14, 'Dufresne', 'Éléonore', '41 rue de la Mer, Toulouse', 'eleonoredufresne14', 'Dufresne987', 'eleonore.dufresne14@example.com', '1992-04-05'),
+
+    (15, 'Faucon', 'Simon', '28 avenue de l’Église, Marseille', 'simonsimon15', 'Faucon1234', 'simon.faucon15@example.com', '1991-05-30'),
+    (16, 'Moreau', 'Mathilde', '67 rue de la République, Grenoble', 'mathildemoreau16', 'Moreau!567', 'mathilde.moreau16@example.com', '1993-11-11'),
+    (17, 'Pires', 'Alice', '45 rue des Fleurs, Nice', 'alicepires17', 'Pires@345', 'alice.pires17@example.com', '1990-06-07'),
+    (18, 'Dumas', 'Louis', '33 rue de la Liberté, Lille', 'louisdumas18', 'Dumas123!', 'louis.dumas18@example.com', '1995-03-18'),
+    (19, 'Delaroche', 'Célia', '72 avenue du Parc, Rennes', 'celiadelaroche19', 'Delaroche@123', 'celia.delaroche19@example.com', '1988-08-22'),
+
+    (20, 'Garnier', 'Léo', '15 rue du Midi, Strasbourg', 'leogarnier20', 'Garnier@456', 'leo.garnier20@example.com', '1992-12-05'),
+    (21, 'Leclerc', 'Éloïse', '23 rue des Pins, Dijon', 'eloiseleclerc21', 'Leclerc123', 'eloise.leclerc21@example.com', '1994-04-13'),
+    (22, 'Boucher', 'Julien', '65 boulevard des Roses, Montpellier', 'julienboucher22', 'Boucher!987', 'julien.boucher22@example.com', '1989-10-30'),
+    (23, 'Blanc', 'Mélanie', '34 rue de l’Indépendance, Toulouse', 'melanieblanc23', 'Blanc123@', 'melanie.blanc23@example.com', '1993-02-26'),
+    (24, 'Lemoine', 'Arthur', '89 rue des Saints, Nantes', 'arthurlemoine24', 'Lemoine@234', 'arthur.lemoine24@example.com', '1990-07-07'),
+
+    (25, 'Thibault', 'Clément', '17 rue de la Paix, Lyon', 'clementthibault25', 'Thibault5678', 'clement.thibault25@example.com', '1989-11-21'),
+    (26, 'Dupont', 'Solène', '29 rue du Soleil, Paris', 'solenedupont26', 'Dupont!123', 'solene.dupont26@example.com', '1992-03-04'),
+    (27, 'Faure', 'Benjamin', '88 avenue de l’Ouest, Marseille', 'benjaminfaure27', 'Faure@345', 'benjamin.faure27@example.com', '1990-08-17'),
+    (28, 'Pichon', 'Léa', '44 rue des Sapins, Toulouse', 'leapichon28', 'Pichon123!', 'lea.pichon28@example.com', '1994-01-11'),
+    (29, 'Benoit', 'Victor', '12 rue du Bonheur, Bordeaux', 'victorbenoit29', 'Benoit!123', 'victor.benoit29@example.com', '1991-04-22'),
+
+    (30, 'Giraud', 'Lina', '51 rue de la Liberté, Lille', 'lina.giraud30', 'Giraud!234', 'lina.giraud30@example.com', '1993-06-10'),
+    (31, 'Meyer', 'Cédric', '37 rue du Vieux Port, Rennes', 'cedricmeyer31', 'Meyer5678', 'cedric.meyer31@example.com', '1992-09-02'),
+    (32, 'Nicolas', 'Sophie', '58 rue du Mont, Nantes', 'sophienicolas32', 'Nicolas123@', 'sophie.nicolas32@example.com', '1989-10-17'),
+    (33, 'Charpentier', 'Arthur', '99 rue de la Gare, Strasbourg', 'arthurcharpentier33', 'Charpentier*456', 'arthur.charpentier33@example.com', '1994-05-23'),
+    (34, 'Boudier', 'Clara', '45 rue des Mimosas, Paris', 'claraboudier34', 'Boudier123', 'clara.boudier34@example.com', '1991-12-08'),
+
+    (35, 'Morin', 'Cyril', '73 avenue des Acacias, Grenoble', 'cyrilmorin35', 'Morin123!@', 'cyril.morin35@example.com', '1989-03-14'),
+    (36, 'Girard', 'Estelle', '12 rue de la Ville, Lille', 'estellegirard36', 'Girard@6789', 'estelle.girard36@example.com', '1990-11-25'),
+    (37, 'Laurent', 'Nicolas', '19 rue des Églises, Toulouse', 'nicolaslaurent37', 'Laurent123!', 'nicolas.laurent37@example.com', '1993-10-03'),
+    (38, 'Gosse', 'Valentin', '35 rue de la Méditerranée, Marseille', 'valentingosse38', 'Gosse1234@', 'valentin.gosse38@example.com', '1991-01-19'),
+    (39, 'Lemoine', 'Dylan', '54 rue de la Paix, Rennes', 'dylanlemoine39', 'Lemoine@789', 'dylan.lemoine39@example.com', '1990-06-09'),
+
+    (10, 'Pires', 'Gabriel', '28 rue des Rosiers, Lyon', 'gabrielpires10', 'Pires987', 'gabriel.pires10@example.com', '1993-02-19'),
+    (11, 'Lemoine', 'Julie', '79 rue de la Seine, Paris', 'julielemoine11', 'Lemoine!123', 'julie.lemoine11@example.com', '1989-03-06'),
+    (12, 'Vigneron', 'Lucas', '11 avenue du Général, Nantes', 'lucasvigneron12', 'Vigneron1234', 'lucas.vigneron12@example.com', '1991-10-22'),
+    (13, 'Deleau', 'Mathis', '15 rue de la Libération, Bordeaux', 'mathisdeleau13', 'Deleau567', 'mathis.deleau13@example.com', '1992-07-14'),
+    (14, 'Marceau', 'Adèle', '44 rue de la République, Marseille', 'adelemarceau14', 'Marceau123@', 'adele.marceau14@example.com', '1993-12-06'),
+
+    (15, 'Mercier', 'Enzo', '56 rue des Lumières, Paris', 'enzomercier15', 'Mercier*567', 'enzo.mercier15@example.com', '1990-09-30'),
+    (16, 'Mallet', 'Nina', '61 rue du Parc, Toulouse', 'ninamallet16', 'Mallet1234', 'nina.mallet16@example.com', '1991-08-19'),
+    (17, 'Perrin', 'Yann', '33 avenue de la Mer, Rennes', 'yannperrin17', 'Perrin123@', 'yann.perrin17@example.com', '1989-07-12'),
+    (18, 'Lambert', 'Eva', '56 rue de la Lune, Lille', 'evalambert18', 'Lambert!234', 'eva.lambert18@example.com', '1993-04-11'),
+    (19, 'Brun', 'David', '72 rue de la Plage, Nantes', 'davidbrun19', 'Brun987', 'david.brun19@example.com', '1992-12-09');
