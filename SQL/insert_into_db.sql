@@ -45,6 +45,48 @@ VALUES
     ('Toulon Dessin', '27 rue Méditerranée, Toulon', '0494345678', 65, 'Toulon', 'Var', 'Provence-Alpes-Côte d Azur'),
     ('Ajaccio Art', '14 rue Corse, Ajaccio', '0495345678', 45, 'Ajaccio', 'Corse-du-Sud', 'Corse');
 
+INSERT INTO Club (nomClub, adresse, numtelephone, nombreAdherents, ville, departement, region)
+VALUES
+    ('Louvre Créatif', '15 rue des Tuileries, Paris', '0145127890', 120, 'Paris', 'Paris', 'Île-de-France'),
+    ('Atelier Bordelais', '50 avenue Saint-André, Bordeaux', '0556982345', 80, 'Bordeaux', 'Gironde', 'Nouvelle-Aquitaine'),
+    ('Studio Rhône-Alpes', '12 rue des Lumières, Lyon', '0478567890', 95, 'Lyon', 'Rhône', 'Auvergne-Rhône-Alpes'),
+    ('Occitanie Design', '33 boulevard Jean-Jaurès, Toulouse', '0567340987', 70, 'Toulouse', 'Haute-Garonne', 'Occitanie'),
+    ('Provence Culture', '18 avenue du Prado, Marseille', '0483451234', 90, 'Marseille', 'Bouches-du-Rhône', 'Provence-Alpes-Côte d Azur'),
+    ('Nord Création', '20 boulevard des Arts, Lille', '0320349876', 100, 'Lille', 'Nord', 'Hauts-de-France'),
+    ('Bretagne Inspiration', '8 rue Saint-Michel, Rennes', '0298346543', 85, 'Rennes', 'Ille-et-Vilaine', 'Bretagne'),
+    ('Alpes Beaux-Arts', '16 promenade des Alpes, Annecy', '0450567891', 75, 'Annecy', 'Haute-Savoie', 'Auvergne-Rhône-Alpes'),
+    ('Culture Dijonnaise', '9 rue de la Moutarde, Dijon', '0380341256', 65, 'Dijon', 'Côte-d Or', 'Bourgogne-Franche-Comté'),
+    ('Arts en Loire', '14 rue du Château, Angers', '0241347654', 60, 'Angers', 'Maine-et-Loire', 'Pays de la Loire'),
+    ('Studio Vulcain', '11 avenue des Volcans, Clermont-Ferrand', '0471349087', 70, 'Clermont-Ferrand', 'Puy-de-Dôme', 'Auvergne-Rhône-Alpes'),
+    ('Normandie Culture', '7 rue Saint-Pierre, Caen', '0231346598', 55, 'Caen', 'Calvados', 'Normandie'),
+    ('Sud Occitanie Arts', '22 boulevard Saint-Guilhem, Montpellier', '0467342301', 85, 'Montpellier', 'Hérault', 'Occitanie'),
+    ('Alsace Inspiration', '12 place de la Cathédrale, Strasbourg', '0388345612', 95, 'Strasbourg', 'Bas-Rhin', 'Grand Est'),
+    ('Atlantique Créatif', '5 avenue Jules Verne, Nantes', '0251340876', 80, 'Nantes', 'Loire-Atlantique', 'Pays de la Loire'),
+    ('Reims Art Studio', '17 rue des Vignes, Reims', '0326349871', 65, 'Reims', 'Marne', 'Grand Est'),
+    ('Orléans Studio Créatif', '24 avenue Jeanne d’Arc, Orléans', '0238345623', 55, 'Orléans', 'Loiret', 'Centre-Val de Loire'),
+    ('Lorraine Dessin', '10 rue des Forges, Metz', '0384342098', 75, 'Metz', 'Moselle', 'Grand Est'),
+    ('Art Nouveau Nancy', '15 rue Saint-Georges, Nancy', '0383247654', 90, 'Nancy', 'Meurthe-et-Moselle', 'Grand Est'),
+    ('Studio Rouen', '18 boulevard des Belges, Rouen', '0232349856', 75, 'Rouen', 'Seine-Maritime', 'Normandie'),
+    ('Havre Inspiration', '20 quai des Arts, Le Havre', '0235346789', 50, 'Le Havre', 'Seine-Maritime', 'Normandie'),
+    ('Val de Loire Atelier', '22 rue Balzac, Tours', '0247348901', 65, 'Tours', 'Indre-et-Loire', 'Centre-Val de Loire'),
+    ('Catalan Créatif', '10 rue Saint-Jean, Perpignan', '0468342098', 45, 'Perpignan', 'Pyrénées-Orientales', 'Occitanie'),
+    ('Lac et Arts', '9 rue de l’Arc, Annecy', '0450342189', 70, 'Annecy', 'Haute-Savoie', 'Auvergne-Rhône-Alpes'),
+    ('Isère Design', '14 rue de l’Étoile, Grenoble', '0476348756', 85, 'Grenoble', 'Isère', 'Auvergne-Rhône-Alpes'),
+    ('Atelier Poitevin', '20 rue Sainte-Croix, Poitiers', '0549340897', 60, 'Poitiers', 'Vienne', 'Nouvelle-Aquitaine'),
+    ('Haute-Vienne Arts', '22 rue Saint-Aurélien, Limoges', '0555349087', 75, 'Limoges', 'Haute-Vienne', 'Nouvelle-Aquitaine'),
+    ('Océan Bretagne', '18 rue Keravel, Brest', '0298345612', 80, 'Brest', 'Finistère', 'Bretagne'),
+    ('Charente Atelier', '19 quai du Gabut, La Rochelle', '0546341876', 70, 'La Rochelle', 'Charente-Maritime', 'Nouvelle-Aquitaine'),
+    ('Somme Créatif', '25 avenue Jules Ferry, Amiens', '0322349823', 95, 'Amiens', 'Somme', 'Hauts-de-France'),
+    ('Loire Design', '12 rue des Forgerons, Saint-Étienne', '0477348912', 65, 'Saint-Étienne', 'Loire', 'Auvergne-Rhône-Alpes'),
+    ('Pyrénées Arts', '10 rue des Sapins, Pau', '0559347821', 55, 'Pau', 'Pyrénées-Atlantiques', 'Nouvelle-Aquitaine'),
+    ('Studio Basque', '17 avenue de la Plage, Bayonne', '0559345698', 50, 'Bayonne', 'Pyrénées-Atlantiques', 'Nouvelle-Aquitaine'),
+    ('Vaucluse Artiste', '18 place du Palais, Avignon', '0490345623', 80, 'Avignon', 'Vaucluse', 'Provence-Alpes-Côte d Azur'),
+    ('Gard Dessin', '14 rue des Arènes, Nîmes', '0466349056', 45, 'Nîmes', 'Gard', 'Occitanie'),
+    ('Plage Basque', '19 promenade du Port-Vieux, Biarritz', '0559346721', 60, 'Biarritz', 'Pyrénées-Atlantiques', 'Nouvelle-Aquitaine'),
+    ('Haut-Rhin Culture', '15 place Unterlinden, Colmar', '0389345623', 75, 'Colmar', 'Haut-Rhin', 'Grand Est'),
+    ('Méditerranée Art', '28 quai de la Marine, Toulon', '0494345634', 65, 'Toulon', 'Var', 'Provence-Alpes-Côte d Azur'),
+    ('Corse Inspiration', '30 avenue Napoléon, Ajaccio', '0495347890', 45, 'Ajaccio', 'Corse-du-Sud', 'Corse');
+
 -- Insertion de 100 utilisateurs répartis sur 40 clubs
 INSERT INTO Utilisateur (numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
 VALUES
