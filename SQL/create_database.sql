@@ -21,7 +21,7 @@ CREATE TABLE Club
     numClub Integer PRIMARY KEY AUTO_INCREMENT,
     nomClub VARCHAR(50) NOT NULL,
     adresse VARCHAR(120) NOT NULL,
-    numTelephone VARCHAR(10) NOT NULL,
+    numTelephone CHAR(10) NOT NULL,
     nombreAdherents Integer NOT NULL,
     ville VARCHAR(50) NOT NULL,
     departement VARCHAR(50) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE Concours
     numPresident Integer NOT NULL,
     theme VARCHAR(50) NOT NULL,
     dateDebut DATE NOT NULL,
-    dateFin DATE NOT NULL,
+    dateFin DATE NOT NULL CHECK (dateFin > dateDebut),
     etat varchar(30) NOT NULL,
     FOREIGN KEY (numPresident) REFERENCES President(numPresident)
 );
@@ -101,7 +101,7 @@ CREATE TABLE Dessin
     numCompetiteur Integer NOT NULL,
     numConcours Integer NOT NULL,
     commentaire VARCHAR(50) NOT NULL,
-    classement Integer NOT NULL,
+    classement Integer NOT NULL CHECK (classement > 0),
     dateRemise DATE NOT NULL,
     leDessin VARCHAR(130) /*Lien vers le dessin sur un imgur par exemple*/
 );
@@ -110,7 +110,7 @@ CREATE TABLE Evaluation
     numEvaluateur Integer NOT NULL,
     numDessin Integer NOT NULL,
     PRIMARY KEY (numEvaluateur, numDessin),
-    note Integer NOT NULL,
+    note Integer NOT NULL CHECK (note >= 0 AND note <= 20),
     commentaire VARCHAR(200) NOT NULL,
     FOREIGN KEY (numEvaluateur) REFERENCES Evaluateur(numEvaluateur),
     FOREIGN KEY (numDessin) REFERENCES Dessin(numDessin)
