@@ -237,6 +237,41 @@ VALUES
 
 INSERT INTO Utilisateur (numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
 VALUES
+    (18, 'Marchand', 'Lucas', '10 rue de l''Horizon, Nice', 'lucasmarchand18', 'LucasMarchand18!', 'lucas.marchand@nice.com', '1992-03-18'),
+    (18, 'Dumont', 'Julie', '12 avenue des Fleurs, Nice', 'juliedumont18', 'JulieDumont18$', 'julie.dumont@nice.com', '1993-06-15'),
+    (18, 'Renard', 'Paul', '14 boulevard des Pins, Nice', 'paulrenard18', 'PaulRenard18#', 'paul.renard@nice.com', '1990-11-22'),
+    (18, 'Gauthier', 'Emma', '16 rue de la Liberté, Nice', 'emmagauthier18', 'EmmaGauthier18*', 'emma.gauthier@nice.com', '1994-02-10'),
+    (18, 'Morin', 'Thomas', '18 avenue des Palmiers, Nice', 'thomasmorin18', 'ThomasMorin18&', 'thomas.morin@nice.com', '1991-04-19'),
+    (18, 'Leclercq', 'Chloé', '20 rue du Soleil, Nice', 'chloeleclercq18', 'ChloeLeclercq18!', 'chloe.leclercq@nice.com', '1995-05-16'),
+    (18, 'Carpentier', 'Victor', '22 boulevard de la Mer, Nice', 'victorcarpentier18', 'VictorCarpentier18%', 'victor.carpentier@nice.com', '1992-09-09'),
+    (18, 'Blondel', 'Amélie', '24 rue des Oliviers, Nice', 'amelieblondel18', 'AmelieBlondel18#', 'amelie.blondel@nice.com', '1990-07-11'),
+    (18, 'Royer', 'Claire', '26 avenue de la Baie, Nice', 'claireroyer18', 'ClaireRoyer18$', 'claire.royer@nice.com', '1993-10-18'),
+    (18, 'Poulain', 'Antoine', '28 rue des Peupliers, Nice', 'antoinepoulain18', 'AntoinePoulain18&', 'antoine.poulain@nice.com', '1991-08-06'),
+
+    (19, 'Vidal', 'Louis', '30 avenue des Tilleuls, Perpignan', 'louisvidal19', 'LouisVidal19!', 'louis.vidal@perpignan.com', '1994-01-19'),
+    (19, 'Chartier', 'Anna', '32 boulevard du Canigou, Perpignan', 'annachartier19', 'AnnaChartier19$', 'anna.chartier@perpignan.com', '1992-05-23'),
+    (19, 'Maillard', 'Nathan', '34 rue des Pyrénées, Perpignan', 'nathanmaillard19', 'NathanMaillard19#', 'nathan.maillard@perpignan.com', '1990-09-18'),
+    (19, 'Perrot', 'Sophie', '36 avenue des Albères, Perpignan', 'sophieperrot19', 'SophiePerrot19&', 'sophie.perrot@perpignan.com', '1993-03-11'),
+    (19, 'Breton', 'Julien', '38 boulevard de la Méditerranée, Perpignan', 'julienbreton19', 'JulienBreton19*', 'julien.breton@perpignan.com', '1991-12-08'),
+    (19, 'Renaud', 'Lucie', '40 rue du Soleil Levant, Perpignan', 'lucierenaud19', 'LucieRenaud19%', 'lucie.renaud@perpignan.com', '1995-11-14'),
+    (19, 'Delaunay', 'Hugo', '42 avenue des Cigales, Perpignan', 'hugodelaunay19', 'HugoDelaunay19$', 'hugo.delaunay@perpignan.com', '1992-02-24'),
+    (19, 'Normand', 'Claire', '44 boulevard des Cèdres, Perpignan', 'clairenormand19', 'ClaireNormand19!', 'claire.normand@perpignan.com', '1990-06-13'),
+    (19, 'Guillot', 'Lucas', '46 rue des Tamarins, Perpignan', 'lucasguillot19', 'LucasGuillot19$', 'lucas.guillot@perpignan.com', '1994-04-29'),
+    (19, 'Baron', 'Chloé', '48 avenue des Romarins, Perpignan', 'chloebaron19', 'ChloeBaron19#', 'chloe.baron@perpignan.com', '1993-07-24'),
+
+    (20, 'Marechal', 'Marie', '50 boulevard du Littoral, Bordeaux', 'mariemarechal20', 'MarieMarechal20%', 'marie.marechal@bordeaux.com', '1991-09-14'),
+    (20, 'Dufresne', 'Antoine', '52 avenue de l''Estuaire, Bordeaux', 'antoinedufresne20', 'AntoineDufresne20$', 'antoine.dufresne@bordeaux.com', '1990-03-20'),
+    (20, 'Prévost', 'Emma', '54 rue des Vignes, Bordeaux', 'emmaprevost20', 'EmmaPrevost20#', 'emma.prevost@bordeaux.com', '1994-08-16'),
+    (20, 'Gaillard', 'Alexandre', '56 boulevard des Coteaux, Bordeaux', 'alexandregaillard20', 'AlexGaillard20&', 'alexandre.gaillard@bordeaux.com', '1992-06-19'),
+    (20, 'Pichon', 'Léa', '58 avenue des Caves, Bordeaux', 'leapichon20', 'LeaPichon20$', 'lea.pichon@bordeaux.com', '1995-10-25'),
+    (20, 'Bazin', 'Victor', '60 rue du Château, Bordeaux', 'victorbazin20', 'VictorBazin20%', 'victor.bazin@bordeaux.com', '1993-12-12'),
+    (20, 'Grenier', 'Clara', '62 boulevard des Crus, Bordeaux', 'claragrenier20', 'ClaraGrenier20#', 'clara.grenier@bordeaux.com', '1990-04-12'),
+    (20, 'Fabre', 'Paul', '64 avenue des Primeurs, Bordeaux', 'paulfabre20', 'PaulFabre20&', 'paul.fabre@bordeaux.com', '1991-07-17'),
+    (20, 'Barre', 'Alice', '66 rue du Moulin, Bordeaux', 'alicebarre20', 'AliceBarre20$', 'alice.barre@bordeaux.com', '1992-11-30'),
+    (20, 'Jacquet', 'Hugo', '68 avenue des Chartrons, Bordeaux', 'hugojacquet20', 'HugoJacquet20*', 'hugo.jacquet@bordeaux.com', '1994-01-18');
+
+INSERT INTO Utilisateur (numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
+VALUES
     (25, 'Lemoine', 'Marion', '28 rue du Bois, Paris', 'marionlemoine25', 'M@rion123', 'marion.lemoine25@example.com', '1991-04-16'),
     (26, 'Dumas', 'Simon', '13 avenue de la Liberté, Lyon', 'simondumas26', 'Dumas@567', 'simon.dumas26@example.com', '1993-11-25'),
     (27, 'Lopez', 'Inès', '64 rue du Général, Toulouse', 'ineslopez27', 'Lopez@234', 'ines.lopez27@example.com', '1989-07-09'),
