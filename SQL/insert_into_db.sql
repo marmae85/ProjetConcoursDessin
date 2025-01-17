@@ -234,3 +234,47 @@ VALUES
     (17, 'Lambert', 'Paul', '64 rue Alsace-Lorraine, Metz', 'paullambert17', 'PaulLambert17&', 'paul.lambert@metz.com', '1991-07-14'),
     (17, 'Benoît', 'Alice', '66 avenue Saint-Pierre, Metz', 'alicebenoit17', 'AliceBenoit17$', 'alice.benoit@metz.com', '1992-11-28'),
     (17, 'Rousseau', 'Hugo', '68 rue Pasteur, Metz', 'hugorousseau17', 'HugoRousseau17*', 'hugo.rousseau@metz.com', '1994-01-17');
+
+INSERT INTO Utilisateur (numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
+VALUES
+    (25, 'Lemoine', 'Marion', '28 rue du Bois, Paris', 'marionlemoine25', 'M@rion123', 'marion.lemoine25@example.com', '1991-04-16'),
+    (26, 'Dumas', 'Simon', '13 avenue de la Liberté, Lyon', 'simondumas26', 'Dumas@567', 'simon.dumas26@example.com', '1993-11-25'),
+    (27, 'Lopez', 'Inès', '64 rue du Général, Toulouse', 'ineslopez27', 'Lopez@234', 'ines.lopez27@example.com', '1989-07-09'),
+    (28, 'Mercier', 'Aurore', '81 boulevard Saint-Germain, Marseille', 'auroremercier28', 'Mercier5678', 'aurore.mercier28@example.com', '1994-03-30'),
+    (29, 'Gauthier', 'Léo', '97 avenue du Parc, Bordeaux', 'leogauthier29', 'Gauthier!987', 'leo.gauthier29@example.com', '1992-12-10'),
+
+    (30, 'Charrier', 'Lilian', '56 rue de la Pépinière, Nantes', 'liliancharrier30', 'Charrier123!', 'lilian.charrier30@example.com', '1995-09-03'),
+    (31, 'Vincent', 'Clara', '88 rue Victor Hugo, Nice', 'claravincent31', 'Vincent@234', 'clara.vincent31@example.com', '1990-01-15'),
+    (32, 'Collet', 'Grégory', '23 avenue de la République, Lille', 'gregorycollet32', 'Collet5678', 'gregory.collet32@example.com', '1991-05-29'),
+    (33, 'Gaudin', 'Elsa', '43 rue de l’Église, Strasbourg', 'elsagaudin33', 'Gaudin@678', 'elsa.gaudin33@example.com', '1992-02-02'),
+    (34, 'Rolland', 'Arthur', '12 rue de la Gare, Rennes', 'arthurrolland34', 'Arthur987@', 'arthur.rolland34@example.com', '1988-10-06'),
+
+    (35, 'Benoit', 'Éva', '59 avenue Jean-Moulin, Grenoble', 'eva.benoit35', 'Benoit456!', 'eva.benoit35@example.com', '1993-08-19'),
+    (36, 'Baudry', 'Pauline', '41 rue de la Gare, Dijon', 'paulinebaudry36', 'Pauline@678', 'pauline.baudry36@example.com', '1994-06-02'),
+    (37, 'Chauvin', 'Axel', '20 avenue de la Mer, Brest', 'axelchauvin37', 'Chauvin123@', 'axel.chauvin37@example.com', '1990-11-18'),
+    (38, 'Charron', 'Noé', '68 rue de la Durance, Tours', 'noecharron38', 'Charron*987', 'noe.charron38@example.com', '1992-04-17'),
+    (39, 'Fortin', 'Alice', '33 rue de la Ville, Montpellier', 'alicefortin39', 'Fortin@234', 'alice.fortin39@example.com', '1991-12-01'),
+
+    (25, 'Barbier', 'Lucas', '11 rue de l’École, Paris', 'lucasbarbier25', 'Barbier1234!', 'lucas.barbier25@example.com', '1989-02-13'),
+    (26, 'Joly', 'Mathis', '56 avenue du Palais, Lyon', 'mathisjoly26', 'Joly987!', 'mathis.joly26@example.com', '1993-07-19'),
+    (27, 'Marchand', 'Léna', '28 rue de la Mer, Toulouse', 'lenamarchand27', 'Marchand4567', 'lena.marchand27@example.com', '1994-01-04'),
+    (28, 'Allard', 'Julien', '77 avenue de l’Industrie, Marseille', 'julienallard28', 'Allard123@', 'julien.allard28@example.com', '1991-03-23'),
+    (29, 'Roux', 'Sacha', '99 rue des Champs, Bordeaux', 'sacharoux29', 'Roux@2345', 'sacha.roux29@example.com', '1995-06-15'),
+
+    (30, 'Roussel', 'Axelle', '44 rue des Martyrs, Nantes', 'axelleroussel30', 'Roussel@5678', 'axelle.roussel30@example.com', '1987-10-29'),
+    (31, 'Pires', 'Maxime', '63 boulevard Saint-Michel, Nice', 'maximepires31', 'Pires4567!', 'maxime.pires31@example.com', '1990-11-12'),
+    (32, 'Boyer', 'Lina', '35 rue de la Libération, Lille', 'lina.boyer32', 'Boyer789@', 'lina.boyer32@example.com', '1994-04-02'),
+    (33, 'Pinson', 'Bastien', '16 rue de la Paix, Strasbourg', 'bastienpinson33', 'Pinson123@', 'bastien.pinson33@example.com', '1993-08-15'),
+    (34, 'Pereira', 'Mathilde', '58 rue des Prés, Rennes', 'mathildepereira34', 'Pereira*234', 'mathilde.pereira34@example.com', '1992-01-09'),
+
+    (35, 'Lemoine', 'Victor', '67 rue de la Lune, Grenoble', 'victorlemoine35', 'Lemoine123@', 'victor.lemoine35@example.com', '1991-05-10'),
+    (36, 'Bouchard', 'Chloé', '50 rue de l’Horloge, Dijon', 'chloebouchard36', 'Bouchard4567', 'chloe.bouchard36@example.com', '1993-03-19'),
+    (37, 'Deschamps', 'Gabriel', '73 rue des Vignes, Brest', 'gabrieldeschamps37', 'Deschamps@678', 'gabriel.deschamps37@example.com', '1990-02-04'),
+    (38, 'Maignan', 'Clément', '30 rue de la Roche, Tours', 'clementmaignan38', 'Maignan123', 'clement.maignan38@example.com', '1992-12-14'),
+    (39, 'Maillard', 'Océane', '90 rue des Roses, Montpellier', 'oceanemaillard39', 'Maillard789', 'oceane.maillard39@example.com', '1994-05-22'),
+
+    (25, 'Fournier', 'Elliot', '12 rue de l’Ange, Paris', 'elliotfournier25', 'Fournier123!', 'elliot.fournier25@example.com', '1992-06-20'),
+    (26, 'Chapel', 'Ingrid', '77 rue de la Fontaine, Lyon', 'ingridchapel26', 'Chapel!234', 'ingrid.chapel26@example.com', '1991-01-13'),
+    (27, 'Vidal', 'Sophie', '54 avenue de la République, Toulouse', 'sophiedavid27', 'Vidal4567', 'sophie.vidal27@example.com', '1994-09-02'),
+    (28, 'Pinel', 'Théo', '62 rue de la Montagne, Marseille', 'theopinel28', 'Pinel*5678', 'theo.pinel28@example.com', '1990-08-11'),
+    (29, 'Charruau', 'Axelle', '88 rue des Écoles, Bordeaux', 'axellecharruau29', 'Charruau123', 'axelle.charruau29@example.com', '1989-05-27');
