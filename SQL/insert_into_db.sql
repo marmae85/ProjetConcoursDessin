@@ -499,23 +499,23 @@ INSERT INTO Concours (numPresident, theme, dateDebut, dateFin, etat)
 VALUES
     (156,'nature morte','2025-01-01','2025-01-15','Terminé'),
     (157,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (158,'moto','2023-01-01','2023-01-15','Terminé'),
-    (159,'paysage','2022-01-01','2022-01-15','Terminé'),
+    (158,'moto','2023-01-01','2025-01-15','Terminé'),
+    (159,'paysage','2022-01-01','2025-01-15','Terminé'),
     (161,'nature morte','2025-01-01','2025-01-15','Terminé'),
     (162,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (163,'moto','2023-01-01','2023-01-15','Terminé'),
-    (164,'paysage','2022-01-01','2022-01-15','Terminé'),
+    (163,'moto','2023-01-01','2025-01-15','Terminé'),
+    (164,'paysage','2022-01-01','2025-01-15','Terminé'),
     (165,'nature morte','2025-01-01','2025-01-09','Terminé'),
     (166,'voiture','2024-07-01','2025-01-11','Terminé'),
-    (167,'moto','2023-01-01','2023-01-15','Terminé'),
-    (168,'paysage','2022-01-01','2022-01-15','Terminé'),
+    (167,'moto','2023-01-01','2025-01-15','Terminé'),
+    (168,'paysage','2022-01-01','2025-01-15','Terminé'),
     (169,'nature morte','2025-01-01','2025-01-05','Terminé'),
     (170,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (171,'moto','2023-01-01','2023-01-08','Terminé'),
-    (172,'paysage','2022-01-01','2022-01-07','Terminé'),
+    (171,'moto','2023-01-01','2025-01-08','Terminé'),
+    (172,'paysage','2022-01-01','2025-01-07','Terminé'),
     (173,'nature morte','2025-01-01','2025-01-11','Terminé'),
     (174,'voiture','2024-07-01','2025-01-12','Terminé'),
-    (175,'moto','2023-01-01','2023-01-12','Terminé'),
+    (175,'moto','2023-01-01','2025-01-12','Terminé'),
     (176,'paysage','2025-01-01','2025-04-15','En cours');
 
 DELIMITER $$
@@ -540,3 +540,33 @@ DELIMITER ;
 
 
 CALL fill_club_participe();
+
+INSERT INTO Competiteur (numCompetiteur, datePremiereParticipation)
+SELECT numUtilisateur,
+       DATE_ADD('2025-01-01', INTERVAL FLOOR(RAND() * 10) DAY)  -- Génère une date entre 2025 et 2025
+FROM Utilisateur
+WHERE numUtilisateur BETWEEN 234 AND 260;
+
+
+DELIMITER $$
+
+CREATE PROCEDURE fill_Competiteur_Participe()
+BEGIN
+    DECLARE competiteur_id INT;
+    DECLARE concours_id INT;
+
+    -- Boucle pour les premiers compétiteurs
+FOR competiteur_id IN 234..260 DO
+        -- Sélectionner un concours aléatoire entre 1 et 20
+        SET concours_id = FLOOR(1 + (RAND() * 20));
+
+        -- Insertion dans la table Club_Participe
+INSERT INTO Concours_Participe (numCompetiteur, numConcours)
+VALUES (competiteur_id, concours_id);
+END FOR;
+END$$
+
+DELIMITER ;
+
+
+CALL fill_Competiteur_Participe();
