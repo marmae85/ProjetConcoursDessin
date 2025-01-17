@@ -175,7 +175,7 @@ VALUES
     (68, 'Baron', 'Jules', '23 boulevard Maupas, Nantes', 'julesbaron', 'Jules78@!', 'jules.baron@example.com', '1988-09-14'),
     (69, 'Langlais', 'Anaïs', '10 avenue Saint-Georges, Nantes', 'anaislanglais', 'Anais!234', 'anais.langlais@example.com', '1992-10-19'),
     (70, 'Marchal', 'Nathan', '5 rue Bellevue, Nantes', 'nathanmarchal', 'Nathan123@', 'nathan.marchal@example.com', '1991-07-20'),
-    (71, 'Fontaine', 'Sophie', '14 boulevard Carnot, Nantes', 'sophiefontaine', 'Sophie*567', 'sophie.fontaine@example.com', '1990-06-27');
+    (71, 'Fontaine', 'Sophie', '14 boulevard Carnot, Nantes', 'sophiefontaine', 'Sophie*567', 'sophie.fontaine@example.com', '1990-06-27'),
 
     (72, 'Petit', 'Arthur', '10 rue de Provence, Rennes', 'arthurpetit8', 'ArthurPetit8!', 'arthur.petit@rennes.com', '1992-03-15'),
     (73, 'Lemoine', 'Julie', '12 avenue de Bretagne, Rennes', 'julielemoine8', 'JulieLemoine8#', 'julie.lemoine@rennes.com', '1993-06-22'),
@@ -456,3 +456,26 @@ VALUES
     (77, 'Dupuis', 'Sophie', '78 rue du Bonheur, Paris', 'sophie.dupuis77', 'Dupuis123', 'sophie.dupuis77@example.com', '1991-03-13'),
     (40, 'Thomas', 'Emeline', '89 rue de la Lune, Marseille', 'emeline.thomas40', 'Thomas5678', 'emeline.thomas40@example.com', '1990-10-23'),
     (41, 'Bernard', 'Michel', '56 rue de la Gare, Bordeaux', 'michel.bernard41', 'Bernard!234', 'michel.bernard41@example.com', '1992-04-29');
+
+
+-- 77 directeurs pour les 77 premiers clubs (utilisateurs 1 à 77) avec une date de début aléatoire
+INSERT INTO Directeur (numDirecteur, dateDebut)
+SELECT numUtilisateur,
+       DATE_ADD('2020-01-01', INTERVAL FLOOR(RAND() * 1826) DAY)  -- Génère une date entre 2020 et 2025
+FROM Utilisateur
+WHERE numUtilisateur BETWEEN 1 AND 77;
+
+
+-- 77 administrateurs pour les 77 premiers clubs (utilisateurs 1 à 77) avec une date de début aléatoire
+INSERT INTO Administrateur (numAdministrateur, dateDebut)
+SELECT numUtilisateur,
+       DATE_ADD('2020-01-01', INTERVAL FLOOR(RAND() * 1826) DAY)  -- Génère une date entre 2020 et 2025
+FROM Utilisateur
+WHERE numUtilisateur BETWEEN 1 AND 77;
+
+-- Remplir la table Club_Directeur pour relier chaque club à un directeur
+INSERT INTO Club_Directeur (numClub, numDirecteur)
+SELECT c.numClub, u.numUtilisateur
+FROM Club c
+         JOIN Utilisateur u ON u.numUtilisateur = c.numClub
+WHERE c.numClub BETWEEN 1 AND 77;
