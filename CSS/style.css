@@ -3,17 +3,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #e0f7fa; /* Couleur de fond plus vive */
     color: #333;
 }
 
 h1, h2 {
-    color: #2c3e50;
+    color: #00796b; /* Couleur de texte plus vive */
 }
 
 /* Header */
 .main-header {
-    background-color: #34495e;
+    background-color: #004d40;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -47,13 +47,13 @@ h1, h2 {
     padding: 2rem;
     margin: 2rem auto;
     max-width: 800px;
-    background-color: white;
+    background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 .section h2 {
-    border-bottom: 2px solid #34495e;
+    border-bottom: 2px solid #004d40;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -74,25 +74,32 @@ input {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    border-color: #00796b;
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
 }
 
 button {
     padding: 0.7rem;
-    background-color: #34495e;
+    background-color: #00796b;
     color: white;
     font-size: 1rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #2c3e50;
+    background-color: #004d40;
 }
 
 /* Footer */
 .main-footer {
-    background-color: #34495e;
+    background-color: #004d40;
     color: white;
     text-align: center;
     padding: 1rem;
