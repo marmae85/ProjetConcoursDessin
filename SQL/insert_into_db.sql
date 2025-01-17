@@ -479,3 +479,17 @@ SELECT c.numClub, u.numUtilisateur
 FROM Club c
          JOIN Utilisateur u ON u.numUtilisateur = c.numClub
 WHERE c.numClub BETWEEN 1 AND 77;
+
+
+-- 77 administrateurs pour les 77 premiers clubs (utilisateurs 1 à 77) avec une date de début aléatoire
+INSERT INTO Administrateur (numAdministrateur, dateDebut)
+SELECT numUtilisateur,
+       DATE_ADD('2020-01-01', INTERVAL FLOOR(RAND() * 1826) DAY)  -- Génère une date entre 2020 et 2025
+FROM Utilisateur
+WHERE numUtilisateur BETWEEN 78 AND 155;
+
+-- Insérer des présidents avec une prime aléatoire entre 500 et 10000
+INSERT INTO President (numPresident, prime)
+SELECT numUtilisateur, FLOOR(RAND() * (10000 - 500 + 1)) + 500
+FROM Utilisateur
+WHERE numUtilisateur BETWEEN 156 AND 233;
