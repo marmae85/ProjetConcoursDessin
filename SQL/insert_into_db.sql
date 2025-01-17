@@ -199,3 +199,38 @@ VALUES
     (32, 'Renaud', 'Emma', '29 rue du Faubourg, Lille', 'emmarenaud32', 'Renaud@123', 'emma.renaud32@example.com', '1992-12-31'),
     (33, 'Muller', 'Nathan', '51 rue Montmartre, Strasbourg', 'nathanmuller33', 'Muller567@', 'nathan.muller33@example.com', '1987-08-18'),
     (34, 'Gaillard', 'Lucie', '61 boulevard Saint-Jacques, Rennes', 'luciegaillard34', 'Lucie*789', 'lucie.gaillard34@example.com', '1990-06-05');
+
+INSERT INTO Utilisateur (numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
+VALUES
+    (15, 'Morel', 'Arthur', '10 rue de Provence, Strasbourg', 'arthurmorel15', 'ArthurMorel15!', 'arthur.morel@strasbourg.com', '1992-03-15'),
+    (15, 'Lemoine', 'Julie', '12 avenue de Bretagne, Strasbourg', 'julielemoine15', 'JulieLemoine15#', 'julie.lemoine@strasbourg.com', '1993-06-22'),
+    (15, 'Dupuis', 'Lucas', '14 boulevard Saint-Michel, Strasbourg', 'lucasdupuis15', 'LucasDupuis15$', 'lucas.dupuis@strasbourg.com', '1990-11-19'),
+    (15, 'Marchal', 'Emma', '16 rue Pasteur, Strasbourg', 'emmamarchal15', 'EmmaMarchal15*', 'emma.marchal@strasbourg.com', '1994-02-11'),
+    (15, 'Dubois', 'Thomas', '18 avenue Carnot, Strasbourg', 'thomasdubois15', 'ThomasDubois15&', 'thomas.dubois@strasbourg.com', '1991-04-17'),
+    (15, 'Noël', 'Chloé', '20 rue République, Strasbourg', 'chloenoel15', 'ChloeNoel15!', 'chloe.noel@strasbourg.com', '1995-05-13'),
+    (15, 'Leclerc', 'Victor', '22 boulevard Voltaire, Strasbourg', 'victorleclerc15', 'VictorLeclerc15%', 'victor.leclerc@strasbourg.com', '1992-09-08'),
+    (15, 'Rousseau', 'Amélie', '24 rue Victor Hugo, Strasbourg', 'amelierousseau15', 'AmelieRousseau15#', 'amelie.rousseau@strasbourg.com', '1990-07-14'),
+    (15, 'Garnier', 'Paul', '26 avenue République, Strasbourg', 'paulgarnier15', 'PaulGarnier15$', 'paul.garnier@strasbourg.com', '1993-10-12'),
+    (15, 'Bernard', 'Clara', '28 rue Nationale, Strasbourg', 'clarabernard15', 'ClaraBernard15&', 'clara.bernard@strasbourg.com', '1991-08-05'),
+
+    (16, 'Thomas', 'Louis', '30 avenue Méditerranée, Reims', 'louisthomas16', 'LouisThomas16!', 'louis.thomas@reims.com', '1994-01-16'),
+    (16, 'Moreau', 'Anna', '32 boulevard Canebière, Reims', 'annamoreau16', 'AnnaMoreau16$', 'anna.moreau@reims.com', '1992-05-28'),
+    (16, 'Blanc', 'Nathan', '34 rue Joliette, Reims', 'nathanblanc16', 'NathanBlanc16#', 'nathan.blanc@reims.com', '1990-09-20'),
+    (16, 'Martin', 'Sophie', '36 avenue Haussmann, Reims', 'sophiemartin16', 'SophieMartin16&', 'sophie.martin@reims.com', '1993-03-05'),
+    (16, 'Fontaine', 'Julien', '38 boulevard Saint-Laurent, Reims', 'julienfontaine16', 'JulienFontaine16*', 'julien.fontaine@reims.com', '1991-12-14'),
+    (16, 'Chevalier', 'Lucie', '40 rue Alsace, Reims', 'luciechevalier16', 'LucieChevalier16%', 'lucie.chevalier@reims.com', '1995-11-03'),
+    (16, 'Durand', 'Hugo', '42 avenue République, Reims', 'hugodurand16', 'HugoDurand16$', 'hugo.durand@reims.com', '1992-02-25'),
+    (16, 'Masson', 'Claire', '44 boulevard Foch, Reims', 'clairemasson16', 'ClaireMasson16!', 'claire.masson@reims.com', '1990-06-18'),
+    (16, 'Rey', 'Lucas', '46 rue Bellecour, Reims', 'lucasrey16', 'LucasRey16$', 'lucas.rey@reims.com', '1994-04-30'),
+    (16, 'Simon', 'Chloé', '48 avenue Saint-Pierre, Reims', 'chloesimon16', 'ChloeSimon16#', 'chloe.simon@reims.com', '1993-07-22'),
+
+    (17, 'Legrand', 'Marie', '50 boulevard Saint-Michel, Metz', 'marielegrand17', 'MarieLegrand17%', 'marie.legrand@metz.com', '1991-09-07'),
+    (17, 'Perrin', 'Antoine', '52 avenue République, Metz', 'antoineperrin17', 'AntoinePerrin17$', 'antoine.perrin@metz.com', '1990-03-19'),
+    (17, 'Barbier', 'Emma', '54 rue Nationale, Metz', 'emmabarbier17', 'EmmaBarbier17#', 'emma.barbier@metz.com', '1994-08-11'),
+    (17, 'Dufour', 'Alexandre', '56 boulevard Voltaire, Metz', 'alexandredufour17', 'AlexDufour17&', 'alexandre.dufour@metz.com', '1992-06-15'),
+    (17, 'Girard', 'Léa', '58 avenue Méditerranée, Metz', 'leagirard17', 'LeaGirard17$', 'lea.girard@metz.com', '1995-10-23'),
+    (17, 'Lemoine', 'Victor', '60 rue Victor Hugo, Metz', 'victorlemoine17', 'VictorLemoine17%', 'victor.lemoine@metz.com', '1993-12-09'),
+    (17, 'Gauthier', 'Clara', '62 boulevard Carnot, Metz', 'claragauthier17', 'ClaraGauthier17#', 'clara.gauthier@metz.com', '1990-04-05'),
+    (17, 'Lambert', 'Paul', '64 rue Alsace-Lorraine, Metz', 'paullambert17', 'PaulLambert17&', 'paul.lambert@metz.com', '1991-07-14'),
+    (17, 'Benoît', 'Alice', '66 avenue Saint-Pierre, Metz', 'alicebenoit17', 'AliceBenoit17$', 'alice.benoit@metz.com', '1992-11-28'),
+    (17, 'Rousseau', 'Hugo', '68 rue Pasteur, Metz', 'hugorousseau17', 'HugoRousseau17*', 'hugo.rousseau@metz.com', '1994-01-17');
