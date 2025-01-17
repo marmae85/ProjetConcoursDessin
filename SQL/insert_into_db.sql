@@ -1,3 +1,7 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
+-- noinspection SqlDialectInspectionForFile
+
 -- Insertion de 40 clubs
 INSERT INTO Club (nomClub, adresse, numTelephone, nombreAdherents, ville, departement, region)
 VALUES
@@ -163,3 +167,35 @@ VALUES
     (10, 'Lambert', 'Paul', '64 rue Alsace-Lorraine, Nice', 'paullambert10', 'PaulLambert10&', 'paul.lambert@nice.com', '1991-07-14'),
     (10, 'Benoît', 'Alice', '66 avenue Saint-Pierre, Nice', 'alicebenoit10', 'AliceBenoit10$', 'alice.benoit@nice.com', '1992-11-28'),
     (10, 'Rousseau', 'Hugo', '68 rue Pasteur, Nice', 'hugorousseau10', 'HugoRousseau10*', 'hugo.rousseau@nice.com', '1994-01-17');
+
+INSERT INTO Utilisateur (numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
+VALUES
+    (25, 'Martin', 'Lucas', '12 rue des Lilas, Paris', 'lucasmartin25', 'Pass12345', 'lucas.martin25@example.com', '1990-05-17'),
+    (26, 'Bernard', 'Emma', '34 avenue des Champs, Lyon', 'emmanbernard26', 'Emma4567', 'emma.bernard26@example.com', '1992-12-21'),
+    (27, 'Dubois', 'Nathan', '56 rue de la Liberté, Toulouse', 'nathandubois27', 'Nathan5678', 'nathan.dubois27@example.com', '1988-11-10'),
+    (28, 'Thomas', 'Léa', '78 boulevard Haussmann, Marseille', 'leathomas28', 'Léa*890', 'lea.thomas28@example.com', '1995-01-02'),
+    (29, 'Robert', 'Manon', '90 avenue de la République, Bordeaux', 'manonrobert29', 'Manon!123', 'manon.robert29@example.com', '1991-06-14'),
+
+    (30, 'Petit', 'Antoine', '22 rue du Moulin, Nantes', 'antoinepetit30', 'Petit!234', 'antoine.petit30@example.com', '1993-09-12'),
+    (31, 'Durand', 'Sophie', '45 rue Pasteur, Nice', 'sophiedurand31', 'Sophie7890', 'sophie.durand31@example.com', '1989-04-06'),
+    (32, 'Leroy', 'Noah', '67 avenue Carnot, Lille', 'noahleroy32', 'Leroy@123', 'noah.leroy32@example.com', '1992-08-21'),
+    (33, 'Morel', 'Camille', '18 boulevard de la Gare, Strasbourg', 'camillemorel33', 'Camille_567', 'camille.morel33@example.com', '1987-03-25'),
+    (34, 'Simon', 'Hugo', '40 place Gambetta, Rennes', 'hugosimon34', 'Hugo789*', 'hugo.simon34@example.com', '1990-12-11'),
+
+    (35, 'Laurent', 'Alice', '12 avenue Jean-Jaurès, Grenoble', 'alicelaurent35', 'Alice!5678', 'alice.laurent35@example.com', '1994-06-08'),
+    (36, 'Roux', 'Paul', '24 rue des Alpes, Dijon', 'paulroux36', 'Paul*2345', 'paul.roux36@example.com', '1991-02-19'),
+    (37, 'David', 'Émilie', '38 boulevard République, Brest', 'emiliedavid37', 'David!678', 'emilie.david37@example.com', '1988-11-07'),
+    (38, 'Bertrand', 'Tom', '49 rue Lafayette, Tours', 'tombertrand38', 'Tom@1234', 'tom.bertrand38@example.com', '1993-05-22'),
+    (39, 'Fournier', 'Lola', '57 avenue Voltaire, Montpellier', 'lolafournier39', 'Lola789!', 'lola.fournier39@example.com', '1995-07-14'),
+
+    (25, 'Girard', 'Clément', '63 boulevard des Italiens, Paris', 'clementgirard25', 'Clément123!', 'clement.girard25@example.com', '1992-09-29'),
+    (26, 'Bonnet', 'Chloé', '76 rue de la Gare, Lyon', 'chloebonnet26', 'Bonnet!890', 'chloe.bonnet26@example.com', '1989-03-16'),
+    (27, 'Dupont', 'Victor', '84 avenue Saint-Michel, Toulouse', 'victordupont27', 'Victor678!', 'victor.dupont27@example.com', '1991-01-11'),
+    (28, 'Blanc', 'Marie', '98 boulevard Carnot, Marseille', 'marieblanc28', 'Marie_567', 'marie.blanc28@example.com', '1993-10-08'),
+    (29, 'Faure', 'Éloïse', '21 rue République, Bordeaux', 'eloisefaure29', 'Faure!4567', 'eloise.faure29@example.com', '1990-07-26'),
+
+    (30, 'Chevalier', 'Louis', '33 avenue Bellecour, Nantes', 'louischevalier30', 'Louis456@', 'louis.chevalier30@example.com', '1994-04-20'),
+    (31, 'Perrot', 'Anaïs', '17 rue de la Paix, Nice', 'anaisperrot31', 'Anais!890', 'anais.perrot31@example.com', '1995-02-03'),
+    (32, 'Renaud', 'Emma', '29 rue du Faubourg, Lille', 'emmarenaud32', 'Renaud@123', 'emma.renaud32@example.com', '1992-12-31'),
+    (33, 'Muller', 'Nathan', '51 rue Montmartre, Strasbourg', 'nathanmuller33', 'Muller567@', 'nathan.muller33@example.com', '1987-08-18'),
+    (34, 'Gaillard', 'Lucie', '61 boulevard Saint-Jacques, Rennes', 'luciegaillard34', 'Lucie*789', 'lucie.gaillard34@example.com', '1990-06-05');
