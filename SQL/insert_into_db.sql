@@ -271,27 +271,27 @@ VALUES
     (08, 'Charron', 'Noé', '68 rue de la Durance, Tours', 'noecharron38', 'Charron*987', 'noe.charron38@example.com', '1992-04-17'),
     (09, 'Fortin', 'Alice', '33 rue de la Ville, Montpellier', 'alicefortin39', 'Fortin@234', 'alice.fortin39@example.com', '1991-12-01'),
 
-    (05, 'Barbier', 'Lucas', '11 rue de l’École, Paris', 'lucasbarbier25', 'Barbier1234!', 'lucas.barbier25@example.com', '1989-02-13'),
-    (06, 'Joly', 'Mathis', '56 avenue du Palais, Lyon', 'mathisjoly26', 'Joly987!', 'mathis.joly26@example.com', '1993-07-19'),
-    (07, 'Marchand', 'Léna', '28 rue de la Mer, Toulouse', 'lenamarchand27', 'Marchand4567', 'lena.marchand27@example.com', '1994-01-04'),
-    (08, 'Allard', 'Julien', '77 avenue de l’Industrie, Marseille', 'julienallard28', 'Allard123@', 'julien.allard28@example.com', '1991-03-23'),
-    (09, 'Roux', 'Sacha', '99 rue des Champs, Bordeaux', 'sacharoux29', 'Roux@2345', 'sacha.roux29@example.com', '1995-06-15'),
+    (01, 'Barbier', 'Lucas', '11 rue de l’École, Paris', 'lucasbarbier25', 'Barbier1234!', 'lucas.barbier25@example.com', '1989-02-13'),
+    (01, 'Joly', 'Mathis', '56 avenue du Palais, Lyon', 'mathisjoly26', 'Joly987!', 'mathis.joly26@example.com', '1993-07-19'),
+    (01, 'Marchand', 'Léna', '28 rue de la Mer, Toulouse', 'lenamarchand27', 'Marchand4567', 'lena.marchand27@example.com', '1994-01-04'),
+    (02, 'Allard', 'Julien', '77 avenue de l’Industrie, Marseille', 'julienallard28', 'Allard123@', 'julien.allard28@example.com', '1991-03-23'),
+    (02, 'Roux', 'Sacha', '99 rue des Champs, Bordeaux', 'sacharoux29', 'Roux@2345', 'sacha.roux29@example.com', '1995-06-15'),
 
-    (03, 'Roussel', 'Axelle', '44 rue des Martyrs, Nantes', 'axelleroussel30', 'Roussel@5678', 'axelle.roussel30@example.com', '1987-10-29'),
-    (01, 'Pires', 'Maxime', '63 boulevard Saint-Michel, Nice', 'maximepires31', 'Pires4567!', 'maxime.pires31@example.com', '1990-11-12'),
-    (02, 'Boyer', 'Lina', '35 rue de la Libération, Lille', 'lina.boyer32', 'Boyer789@', 'lina.boyer32@example.com', '1994-04-02'),
+    (02, 'Roussel', 'Axelle', '44 rue des Martyrs, Nantes', 'axelleroussel30', 'Roussel@5678', 'axelle.roussel30@example.com', '1987-10-29'),
+    (03, 'Pires', 'Maxime', '63 boulevard Saint-Michel, Nice', 'maximepires31', 'Pires4567!', 'maxime.pires31@example.com', '1990-11-12'),
+    (03, 'Boyer', 'Lina', '35 rue de la Libération, Lille', 'lina.boyer32', 'Boyer789@', 'lina.boyer32@example.com', '1994-04-02'),
     (03, 'Pinson', 'Bastien', '16 rue de la Paix, Strasbourg', 'bastienpinson33', 'Pinson123@', 'bastien.pinson33@example.com', '1993-08-15'),
     (04, 'Pereira', 'Mathilde', '58 rue des Prés, Rennes', 'mathildepereira34', 'Pereira*234', 'mathilde.pereira34@example.com', '1992-01-09'),
 
-    (15, 'Lemoine', 'Victor', '67 rue de la Lune, Grenoble', 'victorlemoine35', 'Lemoine123@', 'victor.lemoine35@example.com', '1991-05-10'),
-    (16, 'Bouchard', 'Chloé', '50 rue de l’Horloge, Dijon', 'chloebouchard36', 'Bouchard4567', 'chloe.bouchard36@example.com', '1993-03-19'),
-    (17, 'Deschamps', 'Gabriel', '73 rue des Vignes, Brest', 'gabrieldeschamps37', 'Deschamps@678', 'gabriel.deschamps37@example.com', '1990-02-04'),
-    (18, 'Maignan', 'Clément', '30 rue de la Roche, Tours', 'clementmaignan38', 'Maignan123', 'clement.maignan38@example.com', '1992-12-14'),
-    (19, 'Maillard', 'Océane', '90 rue des Roses, Montpellier', 'oceanemaillard39', 'Maillard789', 'oceane.maillard39@example.com', '1994-05-22'),
+    (04, 'Lemoine', 'Victor', '67 rue de la Lune, Grenoble', 'victorlemoine35', 'Lemoine123@', 'victor.lemoine35@example.com', '1991-05-10'),
+    (04, 'Bouchard', 'Chloé', '50 rue de l’Horloge, Dijon', 'chloebouchard36', 'Bouchard4567', 'chloe.bouchard36@example.com', '1993-03-19'),
+    (05, 'Deschamps', 'Gabriel', '73 rue des Vignes, Brest', 'gabrieldeschamps37', 'Deschamps@678', 'gabriel.deschamps37@example.com', '1990-02-04'),
+    (05, 'Maignan', 'Clément', '30 rue de la Roche, Tours', 'clementmaignan38', 'Maignan123', 'clement.maignan38@example.com', '1992-12-14'),
+    (05, 'Maillard', 'Océane', '90 rue des Roses, Montpellier', 'oceanemaillard39', 'Maillard789', 'oceane.maillard39@example.com', '1994-05-22'),
 
-    (15, 'Fournier', 'Elliot', '12 rue de l’Ange, Paris', 'elliotfournier25', 'Fournier123!', 'elliot.fournier25@example.com', '1992-06-20'),
-    (16, 'Chapel', 'Ingrid', '77 rue de la Fontaine, Lyon', 'ingridchapel26', 'Chapel!234', 'ingrid.chapel26@example.com', '1991-01-13'),
-    (17, 'Vidal', 'Sophie', '54 avenue de la République, Toulouse', 'sophiedavid27', 'Vidal4567', 'sophie.vidal27@example.com', '1994-09-02'),
+    (06, 'Fournier', 'Elliot', '12 rue de l’Ange, Paris', 'elliotfournier25', 'Fournier123!', 'elliot.fournier25@example.com', '1992-06-20'),
+    (06, 'Chapel', 'Ingrid', '77 rue de la Fontaine, Lyon', 'ingridchapel26', 'Chapel!234', 'ingrid.chapel26@example.com', '1991-01-13'),
+    (06, 'Vidal', 'Sophie', '54 avenue de la République, Toulouse', 'sophiedavid27', 'Vidal4567', 'sophie.vidal27@example.com', '1994-09-02'),
     (18, 'Pinel', 'Théo', '62 rue de la Montagne, Marseille', 'theopinel28', 'Pinel*5678', 'theo.pinel28@example.com', '1990-08-11'),
     (19, 'Charruau', 'Axelle', '88 rue des Écoles, Bordeaux', 'axellecharruau29', 'Charruau123', 'axelle.charruau29@example.com', '1989-05-27');
 
@@ -571,25 +571,30 @@ VALUES
     (259, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
     (260, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature'));
 
-DELIMITER $$
 
-CREATE PROCEDURE fill_Jury()
-BEGIN
-    DECLARE evaluateur_id INT;
-    DECLARE concours_id INT;
 
-    -- Boucle pour les premiers compétiteurs
-FOR evaluateur_id IN 201..260 DO
-        -- Sélectionner un concours aléatoire entre 1 et 20
-        SET concours_id = FLOOR(1 + (RAND() * 4));
-
-        -- Insertion dans la table Club_Participe
 INSERT INTO Jury (numEvaluateur, numConcours)
-VALUES (evaluateur_id, concours_id);
-END FOR;
-END$$
+VALUES
+    (201, 1),(201, 2),(201, 3),(201, 4),
+    (202, 1),(202, 2),(202, 3),(202, 4),
+    (203, 1),(203, 2),(203, 3),(203, 4),
 
-DELIMITER ;
+    (204, 1),(204, 2),(204, 3),(204, 4),
+    (205, 1),(205, 2),(205, 3),(205, 4),
+    (206, 1),(206, 2),(206, 3),(206, 4),
 
+    (207, 1),(207, 2),(207, 3),(207, 4),
+    (208, 1),(208, 2),(208, 3),(208, 4),
+    (209, 1),(209, 2),(209, 3),(209, 4),
 
-CALL fill_Jury();
+    (210, 1),(210, 2),(210, 3),(210, 4),
+    (211, 1),(211, 2),(211, 3),(211, 4),
+    (212, 1),(212, 2),(212, 3),(212, 4),
+
+    (213, 1),(213, 2),(213, 3),(213, 4),
+    (214, 1),(214, 2),(214, 3),(214, 4),
+    (215, 1),(215, 2),(215, 3),(215, 4),
+
+    (216, 1),(216, 2),(216, 3),(216, 4),
+    (217, 1),(217, 2),(217, 3),(217, 4),
+    (218, 1),(218, 2),(218, 3),(218, 4);
