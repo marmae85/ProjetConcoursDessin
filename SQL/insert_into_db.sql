@@ -609,7 +609,7 @@ BEGIN
     DECLARE concours_id INT;
 
     -- Boucle pour les premiers compétiteurs
-FOR evaluateur_id IN 200..240 DO
+FOR evaluateur_id IN 201..240 DO
         -- Sélectionner un concours aléatoire entre 1 et 20
         SET concours_id = FLOOR(1 + (RAND() * 20));
 
