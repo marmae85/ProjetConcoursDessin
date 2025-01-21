@@ -465,14 +465,6 @@ SELECT numUtilisateur,
 FROM Utilisateur
 WHERE numUtilisateur BETWEEN 1 AND 77;
 
-
--- 77 administrateurs pour les 77 premiers clubs (utilisateurs 1 à 77) avec une date de début aléatoire
-INSERT INTO Administrateur (numAdministrateur, dateDebut)
-SELECT numUtilisateur,
-       DATE_ADD('2020-01-01', INTERVAL FLOOR(RAND() * 1826) DAY)  -- Génère une date entre 2020 et 2025
-FROM Utilisateur
-WHERE numUtilisateur BETWEEN 1 AND 77;
-
 -- Remplir la table Club_Directeur pour relier chaque club à un directeur
 INSERT INTO Club_Directeur (numClub, numDirecteur)
 SELECT c.numClub, u.numUtilisateur
@@ -480,43 +472,37 @@ FROM Club c
          JOIN Utilisateur u ON u.numUtilisateur = c.numClub
 WHERE c.numClub BETWEEN 1 AND 77;
 
-
--- 77 administrateurs pour les 77 premiers clubs (utilisateurs 1 à 77) avec une date de début aléatoire
-INSERT INTO Administrateur (numAdministrateur, dateDebut)
-SELECT numUtilisateur,
-       DATE_ADD('2020-01-01', INTERVAL FLOOR(RAND() * 1826) DAY)  -- Génère une date entre 2020 et 2025
-FROM Utilisateur
-WHERE numUtilisateur BETWEEN 78 AND 155;
+INSERT INTO Administrateur(numAdministrateur, dateDebut) VALUES (78,'2020-01-01');
 
 -- Insérer des présidents avec une prime aléatoire entre 500 et 10000
 INSERT INTO President (numPresident, prime)
 SELECT numUtilisateur, FLOOR(RAND() * (10000 - 500 + 1)) + 500
 FROM Utilisateur
-WHERE numUtilisateur BETWEEN 156 AND 233;
+WHERE numUtilisateur BETWEEN 79 AND 98;
 
 -- Insérer un concours terminé avec le thème "nature morte"
 INSERT INTO Concours (numPresident, theme, dateDebut, dateFin, etat)
 VALUES
-    (156,'nature morte','2025-01-01','2025-01-15','Terminé'),
-    (157,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (158,'moto','2023-01-01','2025-01-15','Terminé'),
-    (159,'paysage','2022-01-01','2025-01-15','Terminé'),
-    (161,'nature morte','2025-01-01','2025-01-15','Terminé'),
-    (162,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (163,'moto','2023-01-01','2025-01-15','Terminé'),
-    (164,'paysage','2022-01-01','2025-01-15','Terminé'),
-    (165,'nature morte','2025-01-01','2025-01-09','Terminé'),
-    (166,'voiture','2024-07-01','2025-01-11','Terminé'),
-    (167,'moto','2023-01-01','2025-01-15','Terminé'),
-    (168,'paysage','2022-01-01','2025-01-15','Terminé'),
-    (169,'nature morte','2025-01-01','2025-01-05','Terminé'),
-    (170,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (171,'moto','2023-01-01','2025-01-08','Terminé'),
-    (172,'paysage','2022-01-01','2025-01-07','Terminé'),
-    (173,'nature morte','2025-01-01','2025-01-11','Terminé'),
-    (174,'voiture','2024-07-01','2025-01-12','Terminé'),
-    (175,'moto','2023-01-01','2025-01-12','Terminé'),
-    (176,'paysage','2025-01-01','2025-04-15','En cours');
+    (79,'nature morte','2025-01-01','2025-01-15','Terminé'),
+    (80,'voiture','2024-07-01','2025-01-01','Terminé'),
+    (81,'moto','2023-01-01','2025-01-15','Terminé'),
+    (82,'paysage','2022-01-01','2025-01-15','Terminé'),
+    (83,'nature morte','2025-01-01','2025-01-15','Terminé'),
+    (84,'voiture','2024-07-01','2025-01-01','Terminé'),
+    (85,'moto','2023-01-01','2025-01-15','Terminé'),
+    (86,'paysage','2022-01-01','2025-01-15','Terminé'),
+    (87,'nature morte','2025-01-01','2025-01-09','Terminé'),
+    (88,'voiture','2024-07-01','2025-01-11','Terminé'),
+    (89,'moto','2023-01-01','2025-01-15','Terminé'),
+    (90,'paysage','2022-01-01','2025-01-15','Terminé'),
+    (91,'nature morte','2025-01-01','2025-01-05','Terminé'),
+    (92,'voiture','2024-07-01','2025-01-01','Terminé'),
+    (93,'moto','2023-01-01','2025-01-08','Terminé'),
+    (94,'paysage','2022-01-01','2025-01-07','Terminé'),
+    (95,'nature morte','2025-01-01','2025-01-11','Terminé'),
+    (96,'voiture','2024-07-01','2025-01-12','Terminé'),
+    (97,'moto','2023-01-01','2025-01-12','Terminé'),
+    (98,'paysage','2025-01-01','2025-04-15','En cours');
 
 DELIMITER $$
 
@@ -545,7 +531,7 @@ INSERT INTO Competiteur (numCompetiteur, datePremiereParticipation)
 SELECT numUtilisateur,
        DATE_ADD('2025-01-01', INTERVAL FLOOR(RAND() * 10) DAY)  -- Génère une date entre 2025 et 2025
 FROM Utilisateur
-WHERE numUtilisateur BETWEEN 234 AND 260;
+WHERE numUtilisateur BETWEEN 99 AND 200;
 
 
 DELIMITER $$
@@ -556,12 +542,12 @@ BEGIN
     DECLARE concours_id INT;
 
     -- Boucle pour les premiers compétiteurs
-FOR competiteur_id IN 234..260 DO
+FOR competiteur_id IN 99..200 DO
         -- Sélectionner un concours aléatoire entre 1 et 20
         SET concours_id = FLOOR(1 + (RAND() * 20));
 
-        -- Insertion dans la table Club_Participe
-INSERT INTO Concours_Participe (numCompetiteur, numConcours)
+        -- Insertion dans la table Competiteur_Participe
+INSERT INTO Competiteur_Participe (numCompetiteur, numConcours)
 VALUES (competiteur_id, concours_id);
 END FOR;
 END$$
@@ -573,46 +559,46 @@ CALL fill_Competiteur_Participe();
 
 INSERT INTO Evaluateur (numEvaluateur, specialite)
 VALUES
-    (261, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (262, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (263, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (264, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (265, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (266, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (267, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (268, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (269, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (270, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (271, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (272, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (273, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (274, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (275, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (276, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (277, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (278, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (279, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (280, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (281, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (282, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (283, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (284, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (285, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (286, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (287, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (288, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (289, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (290, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (291, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (292, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (293, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (294, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (295, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (296, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (297, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (298, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (299, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
-    (300, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature'));
+    (201, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (202, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (203, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (204, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (205, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (206, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (207, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (208, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (209, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (210, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (211, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (212, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (213, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (214, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (215, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (216, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (217, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (218, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (219, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (220, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (221, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (222, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (223, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (224, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (225, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (226, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (227, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (228, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (229, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (230, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (231, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (232, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (233, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (234, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (235, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (236, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (237, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (238, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (239, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature')),
+    (240, ELT(FLOOR(1 + (RAND() * 7)), 'nature morte', 'ferrari', 'voiture', 'plage', 'paysage', 'nature', 'caricature'));
 
 
 DELIMITER $$
@@ -623,7 +609,7 @@ BEGIN
     DECLARE concours_id INT;
 
     -- Boucle pour les premiers compétiteurs
-FOR evaluateur_id IN 261..300 DO
+FOR evaluateur_id IN 200..240 DO
         -- Sélectionner un concours aléatoire entre 1 et 20
         SET concours_id = FLOOR(1 + (RAND() * 20));
 
