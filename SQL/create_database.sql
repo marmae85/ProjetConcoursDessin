@@ -90,6 +90,7 @@ CREATE TABLE Concours
     numConcours Integer PRIMARY KEY AUTO_INCREMENT,
     numPresident Integer NOT NULL,
     theme VARCHAR(50) NOT NULL,
+    description varchar(120) NOT NULL,
     dateDebut DATE NOT NULL,
     dateFin DATE NOT NULL CHECK (dateFin > dateDebut),
     etat varchar(30) NOT NULL,
@@ -109,9 +110,11 @@ CREATE TABLE Evaluation
 (
     numEvaluateur Integer NOT NULL,
     numDessin Integer NOT NULL,
+    dateEvaluation DATE NOT NULL,
     PRIMARY KEY (numEvaluateur, numDessin),
     note Integer NOT NULL CHECK (note >= 0 AND note <= 20),
     commentaire VARCHAR(200) NOT NULL,
+
     FOREIGN KEY (numEvaluateur) REFERENCES Evaluateur(numEvaluateur),
     FOREIGN KEY (numDessin) REFERENCES Dessin(numDessin)
 );

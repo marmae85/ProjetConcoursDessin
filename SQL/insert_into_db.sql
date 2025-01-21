@@ -417,60 +417,48 @@ INSERT INTO Administrateur(numAdministrateur, dateDebut) VALUES (21,'2020-01-01'
 INSERT INTO President (numPresident, prime)
 SELECT numUtilisateur, FLOOR(RAND() * (10000 - 500 + 1)) + 500
 FROM Utilisateur
-WHERE numUtilisateur BETWEEN 22 AND 41;
+WHERE numUtilisateur BETWEEN 22 AND 25;
 
 -- Insérer un concours terminé avec le thème "nature morte"
-INSERT INTO Concours (numPresident, theme, dateDebut, dateFin, etat)
+INSERT INTO Concours (numPresident, theme, description, dateDebut, dateFin, etat)
 VALUES
-    (22,'nature morte','2025-01-01','2025-01-15','Terminé'),
-    (23,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (24,'moto','2023-01-01','2025-01-15','Terminé'),
-    (25,'paysage','2022-01-01','2025-01-15','Terminé'),
-    (26,'nature morte','2025-01-01','2025-01-15','Terminé'),
-    (27,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (28,'moto','2023-01-01','2025-01-15','Terminé'),
-    (29,'paysage','2022-01-01','2025-01-15','Terminé'),
-    (30,'nature morte','2025-01-01','2025-01-09','Terminé'),
-    (31,'voiture','2024-07-01','2025-01-11','Terminé'),
-    (32,'moto','2023-01-01','2025-01-15','Terminé'),
-    (33,'paysage','2022-01-01','2025-01-15','Terminé'),
-    (34,'nature morte','2025-01-01','2025-01-05','Terminé'),
-    (35,'voiture','2024-07-01','2025-01-01','Terminé'),
-    (36,'moto','2023-01-01','2025-01-08','Terminé'),
-    (37,'paysage','2022-01-01','2025-01-07','Terminé'),
-    (38,'nature morte','2025-01-01','2025-01-11','Terminé'),
-    (39,'voiture','2024-07-01','2025-01-12','Terminé'),
-    (40,'moto','2023-01-01','2025-01-12','Terminé'),
-    (41,'paysage','2025-01-01','2025-04-15','En cours');
+    (22, 'nature morte', 'Concours dédié à l’art de capturer des objets inanimés avec créativité.', '2022-01-01', '2022-01-15', 'Terminé'),
+    (23, 'nature morte', 'Événement célébrant la mise en scène artistique d’objets inanimés.', '2023-01-01', '2023-04-15', 'Terminé'),
+    (24, 'paysage', 'Invitation à capturer la beauté et la diversité des paysages naturels.', '2024-01-01', '2024-03-15', 'Terminé'),
+    (25, 'paysage', 'Concours en cours sur les paysages, pour capturer leur beauté.', '2025-01-01', '2025-02-17', 'En cours');
 
-DELIMITER $$
-
-CREATE PROCEDURE fill_club_participe()
-BEGIN
-    DECLARE club_id INT;
-    DECLARE concours_id INT;
-
-    -- Boucle pour les 40 premiers clubs
-FOR club_id IN 1..20 DO
-        -- Sélectionner un concours aléatoire entre 1 et 20
-        SET concours_id = FLOOR(1 + (RAND() * 20));
-
-        -- Insertion dans la table Club_Participe
 INSERT INTO Club_Participe (numClub, numConcours)
-VALUES (club_id, concours_id);
-END FOR;
-END$$
-
-DELIMITER ;
-
-
-CALL fill_club_participe();
+VALUES
+    (1, 1),
+    (1, 2),
+    (1, 3),
+    (1, 4),
+    (2, 1),
+    (2, 2),
+    (2, 3),
+    (2, 4),
+    (3, 1),
+    (3, 2),
+    (3, 3),
+    (3, 4),
+    (4, 1),
+    (4, 2),
+    (4, 3),
+    (4, 4),
+    (5, 1),
+    (5, 2),
+    (5, 3),
+    (5, 4),
+    (6, 1),
+    (6, 2),
+    (6, 3),
+    (6, 4);
 
 INSERT INTO Competiteur (numCompetiteur, datePremiereParticipation)
 SELECT numUtilisateur,
        DATE_ADD('2025-01-01', INTERVAL FLOOR(RAND() * 10) DAY)  -- Génère une date entre 2025 et 2025
 FROM Utilisateur
-WHERE numUtilisateur BETWEEN 42 AND 200;
+WHERE numUtilisateur BETWEEN 26 AND 200;
 
 
 DELIMITER $$
@@ -483,7 +471,7 @@ BEGIN
     -- Boucle pour les premiers compétiteurs
 FOR competiteur_id IN 42..200 DO
         -- Sélectionner un concours aléatoire entre 1 et 20
-        SET concours_id = FLOOR(1 + (RAND() * 20));
+        SET concours_id = FLOOR(1 + (RAND() * 4));
 
         -- Insertion dans la table Competiteur_Participe
 INSERT INTO Competiteur_Participe (numCompetiteur, numConcours)
@@ -569,7 +557,7 @@ BEGIN
     -- Boucle pour les premiers compétiteurs
 FOR evaluateur_id IN 201..260 DO
         -- Sélectionner un concours aléatoire entre 1 et 20
-        SET concours_id = FLOOR(1 + (RAND() * 20));
+        SET concours_id = FLOOR(1 + (RAND() * 4));
 
         -- Insertion dans la table Club_Participe
 INSERT INTO Jury (numEvaluateur, numConcours)
@@ -581,4 +569,3 @@ DELIMITER ;
 
 
 CALL fill_Jury();
---helo
