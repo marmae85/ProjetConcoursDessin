@@ -759,5 +759,5 @@ VALUES
     (58, 4, 'Des détails naturels très réussis', null, '2025-01-11', 'Forêt au printemps'),
     (59, 4, 'Une belle profondeur visuelle', null, '2025-01-12', 'Montagnes enneigées'),
     (60, 4, 'Une atmosphère apaisante', null, '2025-01-13', 'Rivière avec montagnes à l’horizon'),
-    (61, 4, 'Une scène qui respire la tranquillité', null, '2025-01-14', 'Paysage avec mer calme');
+    (61, 4, 'Une scène qui respire la tranquillite', null, '2025-01-14', 'Paysage avec mer calme');
 
