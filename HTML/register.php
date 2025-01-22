@@ -1,6 +1,12 @@
 <?php
+global $conn;
 session_start();
-require 'config.php'; // Assure you have a config.php file to connect to your database
+require 'config.php'; // Ensure you have a config.php file to connect to your database
+
+$success = "";
+$error = "";
+$noLogin = "";
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nom = $_POST['nom'];
@@ -8,33 +14,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dateNaissance = $_POST['dateNaissance'];
     $adresse = $_POST['adresse'];
     $login = $_POST['login'];
-    $motDePasse = password_hash($_POST['motDePasse'], PASSWORD_BCRYPT);
+    $motDePasse = $_POST['motDePasse'];
     $email = $_POST['email'];
     $club = $_POST['club'];
 
-    // Database connection
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
     if ($conn->connect_error) {
+        echo "<script>console.log('ERROR CONNECT BDD');</script>";
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO Utilisateur(numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
-            SELECT numclub, ?, ?, ?, ?, ?, ?, ? from Club WHERE nomClub=?;"; // Assuming numClub is 1 for simplicity
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssss", $nom, $prenom, $adresse, $login, $motDePasse, $email, $dateNaissance, $club);
+    $stmt = $conn->prepare("SELECT login FROM Utilisateur WHERE login = ?");
+    $stmt->bind_param("s", $login);
+    $stmt->execute();
+    if ($stmt->fetch()) {
+        $noLogin = "Login déjà utilisé.";
 
-    if ($stmt->execute()) {
-        header('Location: login.php');
-        exit();
     } else {
-        $error = "Erreur lors de l'inscription: " . $stmt->error;
+
+        $sql = "INSERT INTO Utilisateur(numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
+            VALUES (1, ?, ?, ?, ?, ?, ?, ? );";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssss", $nom, $prenom, $adresse, $login, $motDePasse, $email, $dateNaissance);
+
+
+        if ($stmt->execute()) {
+            $success = "Compte utilisateur créé avec succès.";
+            echo "<script>console.log('SUCCES INSCRIPTION');</script>";
+
+        } else {
+            $error = "Erreur lors de l'inscription: " . $stmt->error;
+            echo "<script>console.log('ERROR INSCRIPTION');</script>";
+        }
+
     }
+
 
     $stmt->close();
     $conn->close();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <section id="register" class="section">
     <h2>Inscription</h2>
-    <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
+    <?php if (!empty($success)) { echo "<p style='color: green;'>$success</p>"; } ?>
+    <?php if (!empty($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
+    <?php if (!empty($noLogin)) { echo "<p style='color: red;'>$noLogin</p>"; } ?>
     <form action="register.php" method="post">
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required>

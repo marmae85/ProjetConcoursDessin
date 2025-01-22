@@ -3,7 +3,7 @@
 
 try {
     define('DB_HOST', 'localhost'); // Replace with your database host
-    define('DB_USER', 'db_etu'); // Replace with your database username
+    define('DB_USER', 'root'); // Replace with your database username
     define('DB_PASS', 'antonn49'); // Replace with your database password
     define('DB_NAME', 'db_concours'); // Replace with your database name
 
