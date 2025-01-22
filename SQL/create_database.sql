@@ -101,8 +101,8 @@ CREATE TABLE Dessin
     numDessin Integer PRIMARY KEY AUTO_INCREMENT,
     numCompetiteur Integer NOT NULL,
     numConcours Integer NOT NULL,
-    commentaire VARCHAR(50) NOT NULL,
-    classement Integer NOT NULL CHECK (classement > 0),
+    commentaire VARCHAR(100) NOT NULL,
+    classement Integer CHECK (classement > 0 or NULL), /* si concours en cours : classement null */
     dateRemise DATE NOT NULL,
     leDessin VARCHAR(130) /*Lien vers le dessin sur un imgur par exemple*/
 );
