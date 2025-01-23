@@ -8,7 +8,7 @@ require 'config.php'; // Ensure you have a config.php file to connect to your da
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="../CSS/style.css">
         <title>Statistiques Concours de Dessins</title>
     </head>
 <header class="main-header">
@@ -41,7 +41,7 @@ require 'config.php'; // Ensure you have a config.php file to connect to your da
                 $imageLink = htmlspecialchars($row['leDessin']);
                 $curr_id = htmlspecialchars($row['classement']) . htmlspecialchars($row['numConcours']);
                 echo "<img src='$imageLink' id='$curr_id' alt='Dessin' style='max-width: 200px; margin: 10px;'>";
-                echo "<label for='$curr_id'>Concours n°" . htmlspecialchars($row['numConcours']) . " - Classement : " . htmlspecialchars($row['classement']) . "</label>";
+                echo "<label for='$curr_id' class='labelImages".$row['classement']."'>Concours n°" . htmlspecialchars($row['numConcours']) . " - Classement : " . htmlspecialchars($row['classement']) . "</label>";
                 $cpt++;
                 if ($cpt % 3 == 0) {
                     echo "<br>";
