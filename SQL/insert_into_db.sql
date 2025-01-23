@@ -422,10 +422,10 @@ WHERE numUtilisateur BETWEEN 22 AND 25;
 -- Insérer un concours terminé avec le thème "nature morte"
 INSERT INTO Concours (numPresident, theme, description, dateDebut, dateFin, etat)
 VALUES
-    (22, 'nature morte', 'Concours dédié à l’art de capturer des objets inanimés avec créativité.', '2022-01-01', '2022-01-15', 'Terminé'),
-    (23, 'nature morte', 'Événement célébrant la mise en scène artistique d’objets inanimés.', '2023-01-01', '2023-04-15', 'Terminé'),
-    (24, 'paysage', 'Invitation à capturer la beauté et la diversité des paysages naturels.', '2024-01-01', '2024-03-15', 'Terminé'),
-    (25, 'paysage', 'Concours en cours sur les paysages, pour capturer leur beauté.', '2025-01-01', '2025-02-17', 'En cours');
+    (22, 'nature morte', 'Concours dédié à l’art des pommes.', '2022-01-01', '2022-01-15', 'Terminé'),
+    (23, 'nature morte', 'Événement célébrant la mise en scène de bouquets de fleurs.', '2023-01-01', '2023-04-15', 'Terminé'),
+    (24, 'paysage', 'Invitation à capturer la beauté et la diversité des arbres.', '2024-01-01', '2024-03-15', 'Terminé'),
+    (25, 'paysage', 'Concours en cours sur les paysages montagneux.', '2025-01-01', '2025-02-17', 'En cours');
 
 INSERT INTO Club_Participe (numClub, numConcours)
 VALUES
