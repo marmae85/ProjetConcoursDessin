@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_result($numUtilisateur, $prenom);
         $stmt->fetch();
         $_SESSION['username'] = $prenom;
+        $_SESSION['login'] = $numUtilisateur;
         header('Location: protected_page.php');
         exit();
     } else {
@@ -43,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <nav class="main-nav">
         <ul>
             <li><a href="main.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'main.php' ? 'active' : ''; ?>">Accueil</a></li>
+            <li><a href="stats.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'stats.php' ? 'active' : ''; ?>">Statistiques</a></li>
             <?php if (isset($_SESSION['username'])): ?>
                 <li><a href="protected_page.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'protected_page.php' ? 'active' : ''; ?>"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
                 <li><a href="logout.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'logout.php' ? 'active' : ''; ?>">Déconnexion</a></li>

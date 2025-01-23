@@ -11,21 +11,22 @@ require 'config.php'; // Ensure you have a config.php file to connect to your da
         <link rel="stylesheet" href="CSS/style.css">
         <title>Statistiques Concours de Dessins</title>
     </head>
-    <header class="main-header">
-        <h1>ESEO Dessin</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="main.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'main.php' ? 'active' : ''; ?>">Accueil</a></li>
-                <?php if (isset($_SESSION['username'])): ?>
-                    <li><a href="protected_page.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'protected_page.php' ? 'active' : ''; ?>"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
-                    <li><a href="logout.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'logout.php' ? 'active' : ''; ?>">Déconnexion</a></li>
-                <?php else: ?>
-                    <li><a href="login.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>">Connexion</a></li>
-                    <li><a href="register.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'register.php' ? 'active' : ''; ?>">Inscription</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
-    </header>
+<header class="main-header">
+    <img src="Images/logo_dessin.png" alt="Logo Dessin" class="logo" width="170" height="100">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="main.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'main.php' ? 'active' : ''; ?>">Accueil</a></li>
+            <li><a href="stats.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'stats.php' ? 'active' : ''; ?>">Statistiques</a></li>
+            <?php if (isset($_SESSION['username'])): ?>
+                <li><a href="protected_page.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'protected_page.php' ? 'active' : ''; ?>"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
+                <li><a href="logout.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'logout.php' ? 'active' : ''; ?>">Déconnexion</a></li>
+            <?php else: ?>
+                <li><a href="login.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>">Connexion</a></li>
+                <li><a href="register.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'register.php' ? 'active' : ''; ?>">Inscription</a></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
+</header>
     <body>
         <h1>Statistiques</h1>
         <p>Voici les statistiques des concours de dessins :</p>
