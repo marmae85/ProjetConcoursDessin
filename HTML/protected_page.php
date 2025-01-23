@@ -9,13 +9,10 @@ if (!isset($_SESSION['username'])) {
 }
 
 
-$sql = "SELECT u.nom, u.prenom, u.adresse, u.dateNaissance, d.leDessin
-        FROM Utilisateur u, Dessin d, Competiteur c
-        WHERE u.numUtilisateur=? and d.numCompetiteur=c.numCompetiteur and c.numCompetiteur=u.numUtilisateur
-        GROUP BY d.leDessin";
+$sql = "SELECT u.nom, u.prenom, u.adresse, u.dateNaissance, d.leDessin FROM Utilisateur u, Dessin d, Competiteur c WHERE u.numUtilisateur = ? AND d.numCompetiteur = c.numCompetiteur AND c.numCompetiteur = u.numUtilisateur UNION SELECT u.nom, u.prenom, u.adresse, u.dateNaissance, NULL AS leDessin FROM Utilisateur u WHERE u.numUtilisateur = ?;";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $_SESSION['login']);
+$stmt->bind_param("ii", $_SESSION['login'], $_SESSION['login']);
 $stmt->execute();
 echo "<script>console.log('".$_SESSION['login']."');</script>";
 echo "<script>console.log('$sql');</script>";
@@ -62,13 +59,28 @@ $conn->close();
 <section id="user-info" class="section">
     <h2>Informations de l'utilisateur</h2>
     <?php if (!empty($userInfo)): ?>
-        <?php foreach ($userInfo as $info): ?>
-            <p>Nom: <?php echo htmlspecialchars($info['nom']); ?></p>
-            <p>Prénom: <?php echo htmlspecialchars($info['prenom']); ?></p>
-            <p>Adresse: <?php echo htmlspecialchars($info['adresse']); ?></p>
-            <p>Date de Naissance: <?php echo htmlspecialchars($info['dateNaissance']); ?></p>
-            <p>Le Dessin: <?php echo htmlspecialchars($info['leDessin']); ?></p>
-        <?php endforeach; ?>
+        <?php
+        $isEntered = false;
+        $isEnteredImages = false;
+        foreach ($userInfo as $info) {
+            if (!$isEntered) {
+                echo "<p><strong>Nom</strong> : " . htmlspecialchars($info['nom']) . "</p>";
+                echo "<p><strong>Prénom</strong> : " . htmlspecialchars($info['prenom']) . "</p>";
+                echo "<p><strong>Adresse</strong> : " . htmlspecialchars($info['adresse']) . "</p>";
+                echo "<p><strong>Date de naissance</strong> : " . htmlspecialchars($info['dateNaissance']) . "</p>";
+                $isEntered = true;
+            }
+            if ($info['leDessin'] !== null)
+            {
+                if(!$isEnteredImages)
+                {
+                    echo "<h3>Dessins</h3>";
+                    $isEnteredImages = true;
+                }
+                echo "<img src='" . htmlspecialchars($info['leDessin']) . "' alt='Dessin' style='max-width: 200px; margin: 10px;'>";
+            }
+        }
+        ?>
     <?php else: ?>
         <p>Aucune information disponible.</p>
     <?php endif; ?>
