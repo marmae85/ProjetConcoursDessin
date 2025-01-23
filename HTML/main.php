@@ -9,6 +9,15 @@ $sql = "SELECT c.nomClub, c.nombreAdherents, c.adresse, c.ville, c.departement, 
         GROUP BY c.numClub";
 
 $result = $conn->query($sql);
+
+// SQL query to fetch ongoing competitions
+$sql_competitions = "SELECT cc.dateDebut, cc.dateFin, cc.theme, cc.description, u.nom, u.prenom, cc.etat
+                     FROM Concours cc, Utilisateur u, President p
+                     WHERE p.numPresident = u.numUtilisateur
+                     AND p.numPresident = cc.numPresident
+                     ORDER BY cc.etat ASC";
+
+$result_competitions = $conn->query($sql_competitions);
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +25,12 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion Concours de Dessins</title>
+    <title>ESEO Dessin - Accueil</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 <header class="main-header">
-    <h1>ESEO Dessin</h1>
+    <img src="Images/logo_dessin.png" alt="Logo Dessin" class="logo" width="170" height="100">
     <nav class="main-nav">
         <ul>
             <li><a href="main.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'main.php' ? 'active' : ''; ?>">Accueil</a></li>
@@ -37,20 +46,45 @@ $result = $conn->query($sql);
 </header>
 
 <main>
-    <section id="home" class="section">
-        <img src="Images/logo_dessin.png" alt="Logo Dessin" style="display: block; margin: 0 auto; max-width: 500px;">
-        <h2>Bienvenue</h2>
-        <p>Gérez vos concours de dessins, participez et découvrez les résultats des compétitions passées !</p>
-    </section>
-
     <section id="competitions" class="section">
         <h2>Concours</h2>
-        <p>Découvrez les concours en cours et les résultats des compétitions précédentes.</p>
+        <table class="competition-list">
+            <thead>
+                <tr>
+                    <th>Date de Début</th>
+                    <th>Date de Fin</th>
+                    <th>Thème</th>
+                    <th>Description</th>
+                    <th>Nom du Président</th>
+                    <th>Prénom du Président</th>
+                    <th>État</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if ($result_competitions->num_rows > 0): ?>
+                    <?php while($row = $result_competitions->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($row['dateDebut']); ?></td>
+                            <td><?php echo htmlspecialchars($row['dateFin']); ?></td>
+                            <td><?php echo htmlspecialchars($row['theme']); ?></td>
+                            <td><?php echo htmlspecialchars($row['description']); ?></td>
+                            <td><?php echo htmlspecialchars($row['nom']); ?></td>
+                            <td><?php echo htmlspecialchars($row['prenom']); ?></td>
+                            <td><?php echo htmlspecialchars($row['etat']); ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">Aucun concours trouvé.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </section>
 
     <section id="clubs" class="section">
         <h2>Clubs</h2>
-        <table>
+        <table class="club-list">
             <thead>
                 <tr>
                     <th>Nom du Club</th>
@@ -82,11 +116,6 @@ $result = $conn->query($sql);
                 <?php endif; ?>
             </tbody>
         </table>
-    </section>
-
-    <section id="statistics" class="section">
-        <h2>Statistiques</h2>
-        <p>Consultez les statistiques des concours et performances des participants.</p>
     </section>
 </main>
 

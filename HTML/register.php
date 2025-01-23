@@ -7,6 +7,15 @@ $success = "";
 $error = "";
 $noLogin = "";
 
+// Fetch club names from the database
+$clubs = [];
+$sql = "SELECT nomClub FROM Club";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $clubs[] = $row['nomClub'];
+    }
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nom = $_POST['nom'];
@@ -23,37 +32,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("Connection failed: " . $conn->connect_error);
     }
 
-
     $stmt = $conn->prepare("SELECT login FROM Utilisateur WHERE login = ?");
     $stmt->bind_param("s", $login);
     $stmt->execute();
     if ($stmt->fetch()) {
         $noLogin = "Login déjà utilisé.";
-
     } else {
-
         $sql = "INSERT INTO Utilisateur(numClub, nom, prenom, adresse, login, motDePasse, email, dateNaissance)
-            VALUES (1, ?, ?, ?, ?, ?, ?, ? );";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssssss", $nom, $prenom, $adresse, $login, $motDePasse, $email, $dateNaissance);
+                SELECT numclub, ?, ?, ?, ?, ?, ?, ? from Club WHERE nomClub=?;";
 
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssssss", $nom, $prenom, $adresse, $login, $motDePasse, $email, $dateNaissance, $club);
 
         if ($stmt->execute()) {
             $success = "Compte utilisateur créé avec succès.";
             echo "<script>console.log('SUCCES INSCRIPTION');</script>";
-
         } else {
             $error = "Erreur lors de l'inscription: " . $stmt->error;
             echo "<script>console.log('ERROR INSCRIPTION');</script>";
         }
-
     }
-
 
     $stmt->close();
     $conn->close();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -61,12 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>ESEO Dessin - Inscription</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 <header class="main-header">
-    <h1>ESEO Dessin</h1>
+    <img src="Images/logo_dessin.png" alt="Logo Dessin" class="logo" width="170" height="100">
     <nav class="main-nav">
         <ul>
             <li><a href="main.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'main.php' ? 'active' : ''; ?>">Accueil</a></li>
@@ -107,6 +109,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label for="email">Email :</label>
         <input type="email" id="email" name="email" required>
+
+        <label for="club">Club :</label>
+        <select id="club" name="club" required>
+            <?php foreach ($clubs as $club): ?>
+                <option value="<?php echo htmlspecialchars($club); ?>"><?php echo htmlspecialchars($club); ?></option>
+            <?php endforeach; ?>
+        </select>
 
         <button type="submit">S'inscrire</button>
     </form>

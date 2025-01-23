@@ -1,18 +1,31 @@
 <?php
+global $conn;
 session_start();
+require 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Remplacez ceci par votre propre logique de vérification des informations d'identification
-    if ($username == 'admin' && $password == 'password') {
-        $_SESSION['username'] = $username;
+    // Prepare and execute the SQL query
+    $sql = "SELECT numUtilisateur, prenom FROM Utilisateur WHERE login=? AND motDePasse=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($numUtilisateur, $prenom);
+        $stmt->fetch();
+        $_SESSION['username'] = $prenom;
         header('Location: protected_page.php');
         exit();
     } else {
         $error = "Nom d'utilisateur ou mot de passe incorrect.";
     }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
 
@@ -21,12 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>ESEO Dessin - Connexion</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 <header class="main-header">
-    <h1>ESEO Dessin</h1>
+    <img src="Images/logo_dessin.png" alt="Logo Dessin" class="logo" width="170" height="100">
     <nav class="main-nav">
         <ul>
             <li><a href="main.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'main.php' ? 'active' : ''; ?>">Accueil</a></li>
@@ -40,18 +53,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </ul>
     </nav>
 </header>
-    <section id="login" class="section">
-        <h2>Connexion</h2>
-        <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
-        <form action="login.php" method="post">
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" required>
+<section id="login" class="section">
+    <h2>Connexion</h2>
+    <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
+    <form action="login.php" method="post">
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" name="username" required>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
 
-            <button type="submit">Se connecter</button>
-        </form>
-    </section>
+        <button type="submit">Se connecter</button>
+    </form>
+</section>
 </body>
 </html>

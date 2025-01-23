@@ -12,12 +12,12 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Protégée</title>
+    <title>ESEO Dessin - <?php echo htmlspecialchars($_SESSION['username']); ?></title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 <header class="main-header">
-    <h1>ESEO Dessin</h1>
+    <img src="Images/logo_dessin.png" alt="Logo Dessin" class="logo" width="170" height="100">
     <nav class="main-nav">
         <ul>
             <li><a href="main.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'main.php' ? 'active' : ''; ?>">Accueil</a></li>

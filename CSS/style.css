@@ -3,7 +3,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #333;
 }
 
@@ -13,14 +13,16 @@ h1, h2 {
 
 /* Header */
 .main-header {
-    background-color: #3498db;
-    color: white;
+    background-color: #ffffff;
+    color: #2c3e50;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: left;
 }
+
+
 
 .main-header h1 {
     margin: 0;
@@ -36,7 +38,7 @@ h1, h2 {
 }
 
 .main-nav a {
-    color: white;
+    color: #2c3e50;
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
@@ -49,26 +51,21 @@ h1, h2 {
 }
 
 .main-nav a.active {
-    background-color: grey; /* Grey background for active page link */
+    background-color: #6cbff8;
 }
+
 /* Sections */
 .section {
     padding: 2rem;
     margin: 2rem auto;
-    max-width: 800px;
-    background-color: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #c3e5ff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.section:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.section:nth-child(even) {
-    background-color: #ffffff;
-}
 
 
 
@@ -134,9 +131,8 @@ table {
     margin: 20px 0;
     font-size: 1em;
     font-family: 'Arial', sans-serif;
-    min-width: 400px;
+    min-width: 500px;
     text-align: center;
-    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
 }
 
 table thead tr {
@@ -160,10 +156,20 @@ table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
+table tbody tr:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+
 table tbody tr:last-of-type {
     border-bottom: 2px solid #3498db;
 }
 
 table tbody tr:hover {
     background-color: #f1f1f1;
+}
+
+.club-list {
+    max-height: 400px; /* Set the desired height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    display: block;    /* Ensure the table is treated as a block element */
 }
