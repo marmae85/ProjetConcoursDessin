@@ -55,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </ul>
     </nav>
 </header>
+
+<main>
 <section id="login" class="section">
     <h2>Connexion</h2>
     <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
@@ -68,5 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Se connecter</button>
     </form>
 </section>
+</main>
+
+
 </body>
 </html>
