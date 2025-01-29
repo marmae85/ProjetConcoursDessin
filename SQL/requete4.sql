@@ -9,3 +9,4 @@ WHERE c.numCompetiteur = u.numUtilisateur
                          WHERE cp2.numCompetiteur = c.numCompetiteur)
 GROUP BY c.numCompetiteur
 ORDER BY age ASC;
+

@@ -13,3 +13,5 @@ WHERE cl.numClub=u.numClub AND
 GROUP BY region
 ORDER BY moyenne DESC
     LIMIT 1;
+
+
